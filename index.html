@@ -1,0 +1,2092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Dos Minutos — Spanish Listen & Speak</title>
+  <meta name="description" content="Two-minute beginner Spanish listen-and-speak practice." />
+  <meta name="theme-color" content="#0f1419" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Dos Minutos" />
+  <meta name="format-detection" content="telephone=no" />
+  <style>
+    :root {
+      --bg: #0f1419;
+      --surface: #1a2332;
+      --surface2: #243044;
+      --border: #2d3a4f;
+      --text: #e8eef6;
+      --muted: #8b9bb4;
+      --accent: #3dd6c3;
+      --accent-dim: #2a9e90;
+      --warm: #f0a06a;
+      --danger: #e86a6a;
+      --ok: #6bcf7f;
+      --radius: 16px;
+      --shadow: 0 8px 32px rgba(0,0,0,.35);
+      --font: "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { background: var(--bg); -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+    button, label { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100dvh;
+      line-height: 1.5;
+      background-image:
+        radial-gradient(ellipse at 20% 0%, rgba(61,214,195,.12), transparent 50%),
+        radial-gradient(ellipse at 80% 100%, rgba(240,160,106,.08), transparent 45%);
+    }
+
+    .app {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 1.25rem 1rem 2.5rem;
+      padding:
+        calc(1.25rem + env(safe-area-inset-top, 0px))
+        calc(1rem + env(safe-area-inset-right, 0px))
+        calc(2.5rem + env(safe-area-inset-bottom, 0px))
+        calc(1rem + env(safe-area-inset-left, 0px));
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* —— Home —— */
+    .home-header {
+      text-align: center;
+      padding: 2rem 0 1.25rem;
+    }
+    .logo {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--accent), #7ee8da);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .tagline {
+      color: var(--muted);
+      margin-top: 0.4rem;
+      font-size: 1rem;
+    }
+    .hint-pill {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.35rem 0.85rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .voice-status {
+      margin: 0.85rem auto 0;
+      max-width: 100%;
+      padding: 0.55rem 0.85rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: left;
+      line-height: 1.4;
+    }
+    .voice-status.ok { border-color: rgba(107,207,127,.45); color: var(--ok); }
+    .voice-status.warn { border-color: rgba(240,160,106,.5); color: var(--warm); }
+    .voice-status strong { color: var(--text); font-weight: 600; }
+
+    .home-toggles {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .toggle-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      cursor: pointer;
+      user-select: none;
+      padding: 0.35rem 0.65rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+    }
+    .toggle-label input { accent-color: var(--accent); }
+
+    .scenario-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      flex: 1;
+      margin-top: 0.75rem;
+    }
+    .scenario-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.2rem;
+      cursor: pointer;
+      text-align: left;
+      color: inherit;
+      font: inherit;
+      transition: border-color .15s, transform .12s, background .15s;
+      box-shadow: var(--shadow);
+      width: 100%;
+    }
+    .scenario-card:hover, .scenario-card:focus-visible {
+      border-color: var(--accent);
+      background: var(--surface2);
+      outline: none;
+    }
+    .scenario-card:active { transform: scale(0.98); }
+    .scenario-emoji {
+      font-size: 1.5rem;
+      margin-right: 0.5rem;
+    }
+    .scenario-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+    }
+    .scenario-desc {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 0.35rem;
+      padding-left: 2rem;
+    }
+
+    /* —— Session —— */
+    .screen { display: none; }
+    .screen.active { display: flex; flex-direction: column; flex: 1; }
+
+    .session-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .back-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 0.4rem 0.75rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.85rem;
+    }
+    .back-btn:hover { color: var(--text); border-color: var(--muted); }
+
+    .timer {
+      font-variant-numeric: tabular-nums;
+      font-weight: 700;
+      font-size: 1.35rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      letter-spacing: 0.04em;
+    }
+    .timer.warn { color: var(--warm); border-color: var(--warm); }
+    .timer.danger { color: var(--danger); border-color: var(--danger); animation: pulse 1s ease infinite; }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.65; }
+    }
+
+    .session-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 0.25rem;
+    }
+
+    .session-voice-line {
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 0.65rem;
+      min-height: 1.1em;
+    }
+    .session-voice-line.warn { color: var(--warm); }
+
+    .partner-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.35rem 1.25rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 1rem;
+      flex-shrink: 0;
+    }
+    .partner-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+    .partner-spanish {
+      font-size: 1.45rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: 0.5rem;
+    }
+    .partner-english {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-style: italic;
+      min-height: 1.4em;
+      margin-bottom: 1rem;
+    }
+    .partner-english.hidden { visibility: hidden; }
+
+    .speak-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .btn {
+      border: none;
+      border-radius: 10px;
+      padding: 0.65rem 1rem;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform .1s, opacity .15s, background .15s, box-shadow .15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.9rem;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+    .btn-primary {
+      background: var(--accent);
+      color: #0a1210;
+      flex: 1;
+      justify-content: center;
+      min-height: 48px;
+      font-size: 1rem;
+    }
+    .btn-primary:hover:not(:disabled) { background: #4ee0cd; }
+    .btn-primary.speaking {
+      box-shadow: 0 0 0 3px rgba(61,214,195,.35);
+      background: #4ee0cd;
+    }
+    .btn-secondary {
+      background: var(--surface2);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover:not(:disabled) { border-color: var(--muted); }
+    .btn-secondary.speaking {
+      box-shadow: 0 0 0 3px rgba(61,214,195,.35);
+      border-color: var(--accent);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--muted);
+      border: 1px dashed var(--border);
+      font-weight: 500;
+    }
+    .btn-ghost:hover:not(:disabled) { color: var(--text); border-color: var(--muted); }
+
+    .gesture-banner {
+      display: none;
+      margin-bottom: 0.85rem;
+      padding: 0.85rem;
+      background: rgba(240,160,106,.12);
+      border: 1px solid rgba(240,160,106,.45);
+      border-radius: 12px;
+      text-align: center;
+    }
+    .gesture-banner.visible { display: block; }
+    .gesture-banner p {
+      font-size: 0.85rem;
+      color: var(--warm);
+      margin-bottom: 0.65rem;
+    }
+    .gesture-banner .btn { width: 100%; justify-content: center; }
+
+    .choices-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .choices-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Mic reply area */
+    .mic-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.55rem;
+      margin-bottom: 1rem;
+      padding: 1rem 0.75rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+    .mic-area[hidden] { display: none !important; }
+    .mic-btn {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      border: 3px solid var(--accent);
+      background: var(--surface2);
+      color: var(--accent);
+      font-size: 2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .15s, transform .1s, box-shadow .15s, border-color .15s;
+      touch-action: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .mic-btn:hover { background: rgba(61,214,195,.12); }
+    .mic-btn:active, .mic-btn.listening {
+      transform: scale(1.05);
+      background: rgba(61,214,195,.2);
+      box-shadow: 0 0 0 8px rgba(61,214,195,.15);
+      border-color: #4ee0cd;
+    }
+    .mic-btn.listening { animation: micPulse 1.2s ease infinite; }
+    .mic-btn.success {
+      border-color: var(--ok);
+      color: var(--ok);
+      box-shadow: 0 0 0 8px rgba(107,207,127,.2);
+    }
+    .mic-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      animation: none;
+      transform: none;
+    }
+    @keyframes micPulse {
+      0%, 100% { box-shadow: 0 0 0 6px rgba(61,214,195,.12); }
+      50% { box-shadow: 0 0 0 14px rgba(61,214,195,.22); }
+    }
+    .mic-hint {
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-align: center;
+    }
+    .mic-hint strong { color: var(--text); }
+    .transcript {
+      min-height: 1.3em;
+      font-size: 0.95rem;
+      color: var(--accent);
+      text-align: center;
+      font-weight: 500;
+      padding: 0 0.5rem;
+      word-break: break-word;
+    }
+    .transcript.interim { color: var(--muted); font-style: italic; font-weight: 400; }
+    .transcript.fail { color: var(--warm); }
+    .transcript.ok { color: var(--ok); }
+    .mic-note {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+      max-width: 28rem;
+    }
+    .mic-note.warn { color: var(--warm); }
+
+    .choices-fallback-label {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin: 0.35rem 0 0.45rem;
+      text-align: center;
+      opacity: 0.85;
+    }
+    .choices {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      opacity: 0.78;
+    }
+    .choices:hover, .choices:focus-within { opacity: 1; }
+    .choice-btn {
+      background: transparent;
+      border: 1px dashed var(--border);
+      border-radius: 10px;
+      padding: 0.65rem 0.85rem;
+      text-align: left;
+      cursor: pointer;
+      color: inherit;
+      font: inherit;
+      transition: border-color .15s, background .15s, transform .1s, box-shadow .15s, opacity .15s;
+    }
+    .choice-btn:hover, .choice-btn:focus-visible {
+      border-color: var(--accent);
+      border-style: solid;
+      background: var(--surface2);
+      outline: none;
+      opacity: 1;
+    }
+    .choice-btn:active { transform: scale(0.985); }
+    .choice-btn.match-flash {
+      border-style: solid;
+      border-color: var(--ok);
+      background: rgba(107,207,127,.15);
+      box-shadow: 0 0 0 3px rgba(107,207,127,.25);
+      opacity: 1;
+    }
+    .choice-es {
+      font-weight: 600;
+      font-size: 0.92rem;
+      display: block;
+    }
+    .choice-en {
+      color: var(--muted);
+      font-size: 0.75rem;
+      margin-top: 0.15rem;
+      display: block;
+    }
+
+    .waiting {
+      text-align: center;
+      color: var(--muted);
+      padding: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    /* —— Summary —— */
+    .summary-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      margin-top: 1rem;
+    }
+    .summary-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+    .summary-card p {
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+    .summary-list {
+      text-align: left;
+      margin: 1.25rem 0;
+      padding: 0;
+      list-style: none;
+    }
+    .summary-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+    .summary-list li:last-child { border-bottom: none; }
+    .summary-list .phrase {
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .summary-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 1.25rem;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.75rem;
+      margin-top: 1.5rem;
+      opacity: 0.8;
+    }
+
+    /* —— Mobile / touch —— */
+    .back-btn, .btn, .toggle-label { min-height: 44px; }
+    .btn { white-space: nowrap; }
+    .choice-btn { min-height: 48px; }
+    body.mic-off .choices { opacity: 1; }
+    .install-hint { display: none; margin-top: 0.6rem; font-size: 0.75rem; color: var(--muted); }
+    .install-hint.visible { display: block; }
+    @media (hover: none) {
+      /* Avoid sticky hover states after a tap on phones */
+      .choices { opacity: 1; }
+      .scenario-card:hover { border-color: var(--border); background: var(--surface); }
+      .btn-primary:hover:not(:disabled) { background: var(--accent); }
+      .mic-btn:hover { background: var(--surface2); }
+    }
+
+    @media (min-width: 480px) {
+      .partner-spanish { font-size: 1.6rem; }
+      .logo { font-size: 2.6rem; }
+      .mic-btn { width: 96px; height: 96px; font-size: 2.15rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <!-- HOME -->
+    <div id="home" class="screen active">
+      <header class="home-header">
+        <div class="logo">Dos Minutos</div>
+        <p class="tagline">Speak your reply — the conversation continues.</p>
+        <span class="hint-pill">~2 minutes · speak to continue · tap choices optional</span>
+        <div id="voice-status" class="voice-status" aria-live="polite">Checking Spanish voices…</div>
+        <div class="install-hint" id="install-hint"></div>
+        <div class="home-toggles">
+          <label class="toggle-label" title="Use Google Translate TTS when no Spanish system voice, or force cloud audio">
+            <input type="checkbox" id="toggle-cloud-voice" />
+            Use cloud voice
+          </label>
+        </div>
+      </header>
+      <div class="scenario-list" id="scenario-list"></div>
+      <p class="footer-note">Chrome or Safari · mic permission for speaking · headphones help</p>
+    </div>
+
+    <!-- SESSION -->
+    <div id="session" class="screen">
+      <div class="session-top">
+        <button type="button" class="back-btn" id="btn-end-early">← End</button>
+        <div class="timer" id="timer">2:00</div>
+        <span class="session-label" id="session-title"></span>
+      </div>
+      <div class="session-voice-line" id="session-voice-line"></div>
+
+      <div class="gesture-banner" id="gesture-banner">
+        <p>Tap below to unlock audio (browsers often block autoplay).</p>
+        <button type="button" class="btn btn-primary" id="btn-start-listening">▶ Play first line</button>
+      </div>
+
+      <div class="partner-card" id="partner-card">
+        <div class="partner-badge">🗣️ Partner</div>
+        <div class="partner-spanish" id="partner-es"></div>
+        <div class="partner-english hidden" id="partner-en"></div>
+        <div class="speak-controls">
+          <button type="button" class="btn btn-primary" id="btn-play">▶ Play</button>
+          <button type="button" class="btn btn-secondary" id="btn-slow">🐢 Slow</button>
+          <button type="button" class="btn btn-ghost" id="btn-translate">Show English</button>
+        </div>
+      </div>
+
+      <div class="choices-section">
+        <div class="choices-label" id="choices-label">Your turn</div>
+
+        <div class="mic-area" id="mic-area" hidden>
+          <button type="button" class="mic-btn" id="mic-btn" aria-label="Tap to listen again, or speak your reply">🎤</button>
+          <div class="mic-hint" id="mic-hint"><strong>Speak your reply</strong> — tap mic when done to continue</div>
+          <div class="transcript" id="transcript" aria-live="polite"></div>
+          <div class="mic-note" id="mic-note"></div>
+        </div>
+
+        <div class="choices" id="choices"></div>
+        <div class="waiting" id="waiting" hidden>Listening… tap mic when done to continue.</div>
+      </div>
+    </div>
+
+    <!-- SUMMARY -->
+    <div id="summary" class="screen">
+      <div class="summary-card">
+        <h2 id="summary-heading">¡Bien hecho!</h2>
+        <p id="summary-sub">You practiced for 2 minutes.</p>
+        <p id="summary-scenario"></p>
+        <ul class="summary-list" id="summary-phrases"></ul>
+        <div class="summary-actions">
+          <button type="button" class="btn btn-primary" id="btn-again">Practice again</button>
+          <button type="button" class="btn btn-secondary" id="btn-home">Choose another scenario</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* ========== SCENARIOS ========== */
+    const SCENARIOS = [
+      {
+        id: "hotel",
+        emoji: "🏨",
+        title: "Hotel check-in",
+        description: "Check in, ask about the room, and get the key.",
+        phrases: ["Tengo una reserva", "¿Dónde está mi habitación?", "¿A qué hora es el desayuno?"],
+        turns: [
+          {
+            partner: { es: "¡Buenas tardes! ¿En qué puedo ayudarle?", en: "Good afternoon! How can I help you?" },
+            choices: [
+              { es: "Tengo una reserva.", en: "I have a reservation." },
+              { es: "Quiero una habitación, por favor.", en: "I want a room, please." },
+              { es: "Vengo a hacer el check-in.", en: "I am here to check in." }
+            ]
+          },
+          {
+            partner: { es: "¿A nombre de quién?", en: "Under whose name?" },
+            choices: [
+              { es: "A nombre de Mateo.", en: "Under the name Mateo." },
+              { es: "Carli. Mateo Carli.", en: "Carli. Mateo Carli." },
+              { es: "Aquí tiene mi pasaporte.", en: "Here is my passport." }
+            ]
+          },
+          {
+            partner: { es: "Perfecto. Habitación dos cero cinco. ¿Cuántas noches?", en: "Perfect. Room two zero five. How many nights?" },
+            choices: [
+              { es: "Dos noches.", en: "Two nights." },
+              { es: "Una noche, por favor.", en: "One night, please." },
+              { es: "Tres noches.", en: "Three nights." }
+            ]
+          },
+          {
+            partner: { es: "Muy bien. ¿Quiere desayuno?", en: "Very good. Do you want breakfast?" },
+            choices: [
+              { es: "Sí, por favor. ¿A qué hora es?", en: "Yes, please. What time is it?" },
+              { es: "Sí. ¿Dónde está el comedor?", en: "Yes. Where is the dining room?" },
+              { es: "No, gracias.", en: "No, thank you." }
+            ]
+          },
+          {
+            partner: { es: "El desayuno es de siete a diez. Aquí tiene la llave.", en: "Breakfast is from seven to ten. Here is your key." },
+            choices: [
+              { es: "Gracias. ¿Dónde está el ascensor?", en: "Thanks. Where is the elevator?" },
+              { es: "Perfecto. ¿Hay wifi?", en: "Perfect. Is there wifi?" },
+              { es: "Muchas gracias.", en: "Thank you very much." }
+            ]
+          },
+          {
+            partner: { es: "El ascensor está a la izquierda. ¡Bienvenido!", en: "The elevator is on the left. Welcome!" },
+            choices: null
+          }
+        ]
+      },
+      {
+        id: "taxi",
+        emoji: "🚕",
+        title: "Taking a taxi",
+        description: "Tell the driver where to go and ask about the price.",
+        phrases: ["Al aeropuerto, por favor", "¿Cuánto cuesta?", "Aquí está bien"],
+        turns: [
+          {
+            partner: { es: "¡Buenos días! ¿Adónde va?", en: "Good morning! Where are you going?" },
+            choices: [
+              { es: "Al aeropuerto, por favor.", en: "To the airport, please." },
+              { es: "Al centro, por favor.", en: "To downtown, please." },
+              { es: "A la estación de tren.", en: "To the train station." }
+            ]
+          },
+          {
+            partner: { es: "De acuerdo. ¿Tiene prisa?", en: "Okay. Are you in a hurry?" },
+            choices: [
+              { es: "Sí, un poco. Tengo un vuelo.", en: "Yes, a little. I have a flight." },
+              { es: "No. Sin prisa, gracias.", en: "No. No hurry, thanks." },
+              { es: "Sí. ¿Cuánto tiempo es?", en: "Yes. How long is it?" }
+            ]
+          },
+          {
+            partner: { es: "Veinte minutos, más o menos. ¿Va bien?", en: "Twenty minutes, more or less. Is that okay?" },
+            choices: [
+              { es: "Sí, perfecto.", en: "Yes, perfect." },
+              { es: "¿Cuánto cuesta?", en: "How much does it cost?" },
+              { es: "Bien. ¿Puede ir más rápido?", en: "Fine. Can you go faster?" }
+            ]
+          },
+          {
+            partner: { es: "Son unos quince euros.", en: "It is about fifteen euros." },
+            choices: [
+              { es: "Está bien. ¿Acepta tarjeta?", en: "Okay. Do you take card?" },
+              { es: "De acuerdo. Pago en efectivo.", en: "Okay. I pay in cash." },
+              { es: "Perfecto. Gracias.", en: "Perfect. Thanks." }
+            ]
+          },
+          {
+            partner: { es: "Llegamos. Aquí está el aeropuerto.", en: "We arrived. Here is the airport." },
+            choices: [
+              { es: "Aquí está bien. Gracias.", en: "Here is fine. Thanks." },
+              { es: "¿Puede darme un recibo?", en: "Can you give me a receipt?" },
+              { es: "Muchas gracias. Adiós.", en: "Thank you very much. Goodbye." }
+            ]
+          },
+          {
+            partner: { es: "¡Buen viaje!", en: "Have a good trip!" },
+            choices: null
+          }
+        ]
+      },
+      {
+        id: "phone",
+        emoji: "📞",
+        title: "A phone call",
+        description: "Call a friend, leave a short message, and set a time.",
+        phrases: ["¿Puedo hablar con…?", "No está", "Te llamo mañana"],
+        turns: [
+          {
+            partner: { es: "¿Diga? ¿Quién llama?", en: "Hello? Who is calling?" },
+            choices: [
+              { es: "Hola. Soy Mateo. ¿Está Ana?", en: "Hi. I am Mateo. Is Ana there?" },
+              { es: "Buenas. ¿Puedo hablar con Luis?", en: "Hi. Can I speak with Luis?" },
+              { es: "Hola. Llamo para Ana.", en: "Hi. I am calling for Ana." }
+            ]
+          },
+          {
+            partner: { es: "Ana no está ahora. ¿Quiere dejar un mensaje?", en: "Ana is not here now. Do you want to leave a message?" },
+            choices: [
+              { es: "Sí. ¿Puede decirle que llamé?", en: "Yes. Can you tell her I called?" },
+              { es: "Sí. Que me llame, por favor.", en: "Yes. That she call me, please." },
+              { es: "No, gracias. Llamo más tarde.", en: "No, thanks. I will call later." }
+            ]
+          },
+          {
+            partner: { es: "Claro. ¿A qué número?", en: "Sure. At what number?" },
+            choices: [
+              { es: "Al mismo número. Ella lo tiene.", en: "The same number. She has it." },
+              { es: "Mi celular. Se lo doy ahora.", en: "My cell phone. I will give it now." },
+              { es: "No hace falta. Gracias.", en: "It is not necessary. Thanks." }
+            ]
+          },
+          {
+            partner: { es: "Perfecto. ¿Quiere hablar esta noche?", en: "Perfect. Do you want to talk tonight?" },
+            choices: [
+              { es: "Sí. A las ocho, ¿está bien?", en: "Yes. At eight, is that okay?" },
+              { es: "Mejor mañana por la mañana.", en: "Better tomorrow morning." },
+              { es: "Esta noche no. Mañana sí.", en: "Not tonight. Tomorrow yes." }
+            ]
+          },
+          {
+            partner: { es: "De acuerdo. Se lo digo. ¡Hasta luego!", en: "Okay. I will tell her. See you later!" },
+            choices: [
+              { es: "Gracias. Adiós.", en: "Thanks. Goodbye." },
+              { es: "Muchas gracias. Hasta luego.", en: "Thank you very much. See you later." },
+              { es: "Perfecto. Chao.", en: "Perfect. Bye." }
+            ]
+          },
+          {
+            partner: { es: "¡Que tenga buen día!", en: "Have a nice day!" },
+            choices: null
+          }
+        ]
+      },
+      {
+        id: "doctor",
+        emoji: "🩺",
+        title: "At the doctor",
+        description: "Say what hurts and answer simple health questions.",
+        phrases: ["Me duele la cabeza", "Desde ayer", "¿Es grave?"],
+        turns: [
+          {
+            partner: { es: "Buenos días. ¿Qué le pasa?", en: "Good morning. What is wrong?" },
+            choices: [
+              { es: "Me duele la cabeza.", en: "My head hurts." },
+              { es: "Me duele la garganta.", en: "My throat hurts." },
+              { es: "Tengo fiebre.", en: "I have a fever." }
+            ]
+          },
+          {
+            partner: { es: "¿Desde cuándo?", en: "Since when?" },
+            choices: [
+              { es: "Desde ayer.", en: "Since yesterday." },
+              { es: "Desde esta mañana.", en: "Since this morning." },
+              { es: "Hace dos días.", en: "For two days." }
+            ]
+          },
+          {
+            partner: { es: "¿Tiene tos o resfriado?", en: "Do you have a cough or a cold?" },
+            choices: [
+              { es: "Sí, un poco de tos.", en: "Yes, a little cough." },
+              { es: "No. Solo me duele.", en: "No. It only hurts." },
+              { es: "Sí. Estoy muy cansado.", en: "Yes. I am very tired." }
+            ]
+          },
+          {
+            partner: { es: "Voy a escucharle. ¿Duele aquí?", en: "I am going to listen to you. Does it hurt here?" },
+            choices: [
+              { es: "Sí, un poco.", en: "Yes, a little." },
+              { es: "No. Aquí no.", en: "No. Not here." },
+              { es: "Sí. Duele mucho.", en: "Yes. It hurts a lot." }
+            ]
+          },
+          {
+            partner: { es: "No es grave. Tome esta medicina dos veces al día.", en: "It is not serious. Take this medicine twice a day." },
+            choices: [
+              { es: "¿Con comida?", en: "With food?" },
+              { es: "¿Cuántos días?", en: "How many days?" },
+              { es: "Entiendo. Gracias, doctor.", en: "I understand. Thanks, doctor." }
+            ]
+          },
+          {
+            partner: { es: "Tres días. Descanse mucho. ¡Mejórese!", en: "Three days. Rest a lot. Get well!" },
+            choices: null
+          }
+        ]
+      },
+      {
+        id: "plans",
+        emoji: "📅",
+        title: "Making plans",
+        description: "Invite a friend to dinner and pick a day and time.",
+        phrases: ["¿Quieres cenar?", "¿El viernes?", "Nos vemos a las ocho"],
+        turns: [
+          {
+            partner: { es: "¡Hola! ¿Qué planes tienes esta semana?", en: "Hi! What plans do you have this week?" },
+            choices: [
+              { es: "Nada especial. ¿Y tú?", en: "Nothing special. And you?" },
+              { es: "Estoy libre el viernes.", en: "I am free on Friday." },
+              { es: "Trabajo mucho, pero quiero salir.", en: "I work a lot, but I want to go out." }
+            ]
+          },
+          {
+            partner: { es: "¿Quieres cenar conmigo?", en: "Do you want to have dinner with me?" },
+            choices: [
+              { es: "Sí, me encanta. ¿Cuándo?", en: "Yes, I love that. When?" },
+              { es: "Sí. ¿El viernes?", en: "Yes. Friday?" },
+              { es: "Claro. ¿Dónde?", en: "Sure. Where?" }
+            ]
+          },
+          {
+            partner: { es: "El viernes a las ocho. ¿Te viene bien?", en: "Friday at eight. Does that work for you?" },
+            choices: [
+              { es: "Sí, perfecto.", en: "Yes, perfect." },
+              { es: "Un poco tarde. ¿A las siete?", en: "A bit late. At seven?" },
+              { es: "Sí. ¿En qué restaurante?", en: "Yes. In which restaurant?" }
+            ]
+          },
+          {
+            partner: { es: "En el restaurante italiano cerca del parque.", en: "At the Italian restaurant near the park." },
+            choices: [
+              { es: "Genial. Yo reservo.", en: "Great. I will reserve." },
+              { es: "Perfecto. Nos vemos allí.", en: "Perfect. See you there." },
+              { es: "¿Es caro?", en: "Is it expensive?" }
+            ]
+          },
+          {
+            partner: { es: "No mucho. ¡Nos vemos el viernes!", en: "Not much. See you on Friday!" },
+            choices: [
+              { es: "¡Hasta el viernes!", en: "Until Friday!" },
+              { es: "Sí. ¡Qué ganas!", en: "Yes. I can't wait!" },
+              { es: "Gracias. Adiós.", en: "Thanks. Goodbye." }
+            ]
+          },
+          {
+            partner: { es: "¡Chao! Que tengas buen día.", en: "Bye! Have a nice day." },
+            choices: null
+          }
+        ]
+      },
+      {
+        id: "airport",
+        emoji: "✈️",
+        title: "At the airport",
+        description: "Find your gate, ask about the flight, and board.",
+        phrases: ["¿Dónde está la puerta?", "Mi vuelo es…", "¿Hay retraso?"],
+        turns: [
+          {
+            partner: { es: "Buenos días. ¿En qué puedo ayudar?", en: "Good morning. How can I help?" },
+            choices: [
+              { es: "Busco la puerta B doce.", en: "I am looking for gate B twelve." },
+              { es: "¿Dónde está el control de seguridad?", en: "Where is security?" },
+              { es: "Mi vuelo es a Madrid.", en: "My flight is to Madrid." }
+            ]
+          },
+          {
+            partner: { es: "La puerta B doce está al fondo, a la derecha.", en: "Gate B twelve is at the end, on the right." },
+            choices: [
+              { es: "¿Está lejos?", en: "Is it far?" },
+              { es: "Gracias. ¿Hay retraso?", en: "Thanks. Is there a delay?" },
+              { es: "Perfecto. ¿A qué hora sale?", en: "Perfect. What time does it leave?" }
+            ]
+          },
+          {
+            partner: { es: "Cinco minutos andando. El vuelo sale a las once.", en: "Five minutes walking. The flight leaves at eleven." },
+            choices: [
+              { es: "Gracias. ¿Necesito el pasaporte?", en: "Thanks. Do I need my passport?" },
+              { es: "Bien. ¿Puedo llevar esta bolsa?", en: "Good. Can I take this bag?" },
+              { es: "Entiendo. Muchas gracias.", en: "I understand. Thank you very much." }
+            ]
+          },
+          {
+            partner: { es: "Sí, tenga el pasaporte listo. ¿Primera vez aquí?", en: "Yes, have your passport ready. First time here?" },
+            choices: [
+              { es: "Sí. Estoy un poco nervioso.", en: "Yes. I am a little nervous." },
+              { es: "No. Ya conozco el aeropuerto.", en: "No. I already know the airport." },
+              { es: "Sí. ¿Dónde puedo comprar agua?", en: "Yes. Where can I buy water?" }
+            ]
+          },
+          {
+            partner: { es: "Hay una tienda cerca de la puerta. ¡Buen vuelo!", en: "There is a shop near the gate. Have a good flight!" },
+            choices: [
+              { es: "Gracias. Adiós.", en: "Thanks. Goodbye." },
+              { es: "Muchas gracias. Hasta luego.", en: "Thank you very much. See you later." },
+              { es: "¡Igualmente!", en: "Likewise!" }
+            ]
+          },
+          {
+            partner: { es: "¡Que viaje bien!", en: "Have a good trip!" },
+            choices: null
+          }
+        ]
+      }
+    ];
+
+    /* ========== STATE ========== */
+    const SESSION_SECONDS = 120;
+    const STOPWORDS = new Set([
+      "el", "la", "los", "las", "un", "una", "unos", "unas", "de", "del", "al",
+      "a", "en", "y", "o", "que", "por", "con", "para", "se", "su", "sus",
+      "mi", "me", "te", "le", "lo", "es", "son", "muy", "ya", "no", "si", "sí"
+    ]);
+
+    let currentScenario = null;
+    let turnIndex = 0;
+    let secondsLeft = SESSION_SECONDS;
+    let timerId = null;
+    let englishVisible = false;
+    let spanishVoice = null;
+    let voicesReady = false;
+    let lastScenarioId = null;
+    let useCloudVoice = false;
+    let needsUserGesture = true;
+    let isSpeaking = false;
+    let speakingRate = 1;
+    let cloudAudio = null;
+    let recognition = null;
+    let recognizing = false;
+    let micSupported = false;
+    let micDenied = false;
+    let micPermissionAsked = false;
+    let finalEndTimer = null;
+    let voicePollTimer = null;
+    let autoListenTimer = null;
+    let advancingFromSpeech = false;
+    let lastTranscript = "";
+    let pendingAdvance = false;
+    let pendingRelisten = false;
+
+    /* ========== PLATFORM (iOS / installed app) ========== */
+    const IS_IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    const IS_STANDALONE =
+      (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) ||
+      navigator.standalone === true;
+    const SILENT_WAV = "data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQAAAAA=";
+    let speechPrimed = false;
+    let sharedAudio = null;       // one <audio> unlocked by a tap (iOS), reused for cloud voice
+    let micUnreliable = false;    // recognition stalled repeatedly → stop auto-listen, keep manual mic
+    let micStallCount = 0;
+    let recogWatchdog = null;
+    const RECOG_IDLE_MS = 10000;
+
+    /** Call synchronously inside a tap handler: iOS only allows speech/audio after a user gesture. */
+    function primeAudio() {
+      if (!speechPrimed && "speechSynthesis" in window) {
+        try {
+          const u = new SpeechSynthesisUtterance(" ");
+          u.volume = 0;
+          u.lang = "es-ES";
+          speechSynthesis.speak(u);
+          speechPrimed = true;
+        } catch (_) {}
+      }
+      if (!sharedAudio) {
+        try {
+          sharedAudio = new Audio();
+          sharedAudio.setAttribute("playsinline", "");
+          sharedAudio.src = SILENT_WAV;
+          const p = sharedAudio.play();
+          if (p && p.catch) p.catch(() => {});
+        } catch (_) { sharedAudio = null; }
+      }
+    }
+
+    function micUnavailableText() {
+      if (IS_IOS && IS_STANDALONE) {
+        return "Speaking isn't available in the iPhone home-screen app. Tap a reply below — or open the site in Safari to speak.";
+      }
+      return "Speech recognition not supported. Tap a reply below. (Chrome or Safari recommended.)";
+    }
+
+    function setMicOffClass() {
+      document.body.classList.toggle("mic-off", !micSupported || micDenied || micUnreliable);
+    }
+
+    function clearRecogWatchdog() {
+      if (recogWatchdog) {
+        clearTimeout(recogWatchdog);
+        recogWatchdog = null;
+      }
+    }
+
+    const $ = (id) => document.getElementById(id);
+
+    /* ========== TTS: voice loading ========== */
+    function pickSpanishVoice(voices) {
+      const preferExact = (lang) => voices.find(v => v.lang === lang);
+      const preferPrefix = (lang) => voices.find(v => v.lang && v.lang.toLowerCase().startsWith(lang));
+      return (
+        preferExact("es-ES") ||
+        preferExact("es-MX") ||
+        preferExact("es-US") ||
+        preferExact("es_ES") ||
+        preferExact("es_MX") ||
+        preferPrefix("es-es") ||
+        preferPrefix("es-mx") ||
+        preferPrefix("es-us") ||
+        preferPrefix("es-") ||
+        preferPrefix("es_") ||
+        voices.find(v => /spanish|español|espanol/i.test(v.name)) ||
+        null
+      );
+    }
+
+    function updateVoiceStatusUI() {
+      const el = $("voice-status");
+      const sessionLine = $("session-voice-line");
+      if (!("speechSynthesis" in window)) {
+        el.className = "voice-status warn";
+        el.innerHTML = "<strong>No SpeechSynthesis</strong> in this browser. Enable <em>Use cloud voice</em> or try Chrome.";
+        if (sessionLine) {
+          sessionLine.className = "session-voice-line warn";
+          sessionLine.textContent = "No local TTS — use cloud voice or Play may fail.";
+        }
+        return;
+      }
+      if (!voicesReady) {
+        el.className = "voice-status";
+        el.textContent = "Loading voices…";
+        return;
+      }
+      if (spanishVoice) {
+        el.className = "voice-status ok";
+        el.innerHTML = `Voice: <strong>${spanishVoice.name}</strong> (${spanishVoice.lang})`;
+        if (sessionLine) {
+          sessionLine.className = "session-voice-line";
+          sessionLine.textContent = useCloudVoice
+            ? `Cloud voice on · local: ${spanishVoice.name}`
+            : `Voice: ${spanishVoice.name} (${spanishVoice.lang})`;
+        }
+      } else {
+        el.className = "voice-status warn";
+        el.innerHTML =
+          "<strong>No Spanish voice found.</strong> Tip: install Spanish in OS/browser language packs, or turn on <em>Use cloud voice</em>.";
+        if (sessionLine) {
+          sessionLine.className = "session-voice-line warn";
+          sessionLine.textContent = useCloudVoice
+            ? "Using cloud voice (no local Spanish voice)"
+            : "No Spanish voice — enable Use cloud voice or install Spanish TTS";
+        }
+      }
+    }
+
+    function loadVoices() {
+      if (!("speechSynthesis" in window)) {
+        voicesReady = true;
+        updateVoiceStatusUI();
+        return false;
+      }
+      const voices = speechSynthesis.getVoices() || [];
+      if (voices.length === 0) return false;
+      spanishVoice = pickSpanishVoice(voices);
+      voicesReady = true;
+      updateVoiceStatusUI();
+      return true;
+    }
+
+    function waitForVoices() {
+      if (!("speechSynthesis" in window)) {
+        voicesReady = true;
+        updateVoiceStatusUI();
+        return;
+      }
+      if (loadVoices()) return;
+
+      speechSynthesis.onvoiceschanged = () => {
+        loadVoices();
+      };
+
+      let attempts = 0;
+      if (voicePollTimer) clearInterval(voicePollTimer);
+      voicePollTimer = setInterval(() => {
+        attempts += 1;
+        if (loadVoices() || attempts >= 40) {
+          clearInterval(voicePollTimer);
+          voicePollTimer = null;
+          if (!voicesReady) {
+            voicesReady = true;
+            spanishVoice = null;
+            updateVoiceStatusUI();
+          }
+        }
+      }, 250);
+    }
+
+    function shouldUseCloud() {
+      return useCloudVoice || !spanishVoice;
+    }
+
+    function setSpeakingUI(active, rate) {
+      isSpeaking = active;
+      $("btn-play").classList.toggle("speaking", active && rate >= 0.95);
+      $("btn-slow").classList.toggle("speaking", active && rate < 0.95);
+      updateMicAvailability();
+    }
+
+    function stopAllSpeech() {
+      cancelAutoListen();
+      if ("speechSynthesis" in window) {
+        try { speechSynthesis.cancel(); } catch (_) {}
+      }
+      if (cloudAudio) {
+        try {
+          cloudAudio.onended = null;
+          cloudAudio.onerror = null;
+          cloudAudio.pause();
+          cloudAudio.removeAttribute("src");
+          cloudAudio.load();
+        } catch (_) {}
+        cloudAudio = null;
+      }
+      setSpeakingUI(false, 1);
+    }
+
+    function cloudTtsUrl(text) {
+      return (
+        "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=es&q=" +
+        encodeURIComponent(text)
+      );
+    }
+
+    function speakCloud(text, rate) {
+      return new Promise((resolve) => {
+        abortRecognition();
+        const audio = sharedAudio || new Audio();
+        cloudAudio = audio;
+        audio.src = cloudTtsUrl(text);
+        // playbackRate ~ maps slow; Google TTS is fixed rate-ish
+        audio.playbackRate = rate < 0.9 ? 0.75 : 1;
+        setSpeakingUI(true, rate);
+        const done = () => {
+          if (cloudAudio === audio) cloudAudio = null;
+          setSpeakingUI(false, rate);
+          resolve();
+        };
+        audio.onended = done;
+        audio.onerror = () => {
+          done();
+          const note = $("mic-note");
+          if (note && currentScenario) {
+            note.className = "mic-note warn";
+            note.textContent = "Cloud voice failed (network/block). Try Play again or a system Spanish voice.";
+          }
+        };
+        audio.play().catch(() => {
+          needsUserGesture = true;
+          showGestureBanner(true);
+          done();
+        });
+      });
+    }
+
+    function speakLocal(text, rate) {
+      return new Promise((resolve) => {
+        if (!("speechSynthesis" in window)) {
+          resolve();
+          return;
+        }
+        abortRecognition();
+        try { speechSynthesis.cancel(); } catch (_) {}
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = (spanishVoice && spanishVoice.lang) || "es-ES";
+        if (spanishVoice) u.voice = spanishVoice;
+        u.rate = rate;
+        u.pitch = 1;
+        setSpeakingUI(true, rate);
+        let settled = false;
+        const finish = () => {
+          if (settled) return;
+          settled = true;
+          setSpeakingUI(false, rate);
+          resolve();
+        };
+        u.onend = finish;
+        u.onerror = (ev) => {
+          // not-allowed often means missing user gesture
+          if (ev && (ev.error === "not-allowed" || ev.error === "canceled")) {
+            if (ev.error === "not-allowed") {
+              needsUserGesture = true;
+              showGestureBanner(true);
+            }
+          }
+          finish();
+        };
+        try {
+          speechSynthesis.speak(u);
+          needsUserGesture = false;
+          showGestureBanner(false);
+          // Some engines stay pending forever if blocked silently
+          setTimeout(() => {
+            if (!settled && !speechSynthesis.speaking && !speechSynthesis.pending) {
+              // likely blocked without firing error
+              needsUserGesture = true;
+              showGestureBanner(true);
+              finish();
+            }
+          }, 800);
+        } catch (_) {
+          needsUserGesture = true;
+          showGestureBanner(true);
+          finish();
+        }
+      });
+    }
+
+    async function speak(text, rate = 1) {
+      speakingRate = rate;
+      stopAllSpeech();
+      if (shouldUseCloud()) {
+        await speakCloud(text, rate);
+        return;
+      }
+      await speakLocal(text, rate);
+    }
+
+    async function speakCurrent(rate = 1) {
+      const turn = currentScenario && currentScenario.turns[turnIndex];
+      if (!turn) return;
+      const idx = turnIndex;
+      const scenarioId = currentScenario && currentScenario.id;
+      await speak(turn.partner.es, rate);
+      // Auto-listen only after partner TTS truly ended, same turn still active
+      if (!currentScenario || currentScenario.id !== scenarioId) return;
+      if (turnIndex !== idx || isSpeaking) return;
+      if (!turn.choices) return;
+      if (needsUserGesture) return; // audio unlock still needed — wait for Play
+      scheduleAutoListen(400);
+    }
+
+    function showGestureBanner(show) {
+      $("gesture-banner").classList.toggle("visible", !!show);
+    }
+
+    /* ========== SPEECH RECOGNITION ========== */
+    function getSpeechRecognitionCtor() {
+      return window.SpeechRecognition || window.webkitSpeechRecognition || null;
+    }
+
+    function initRecognitionSupport() {
+      const Ctor = getSpeechRecognitionCtor();
+      micSupported = !!Ctor;
+      if (!micSupported) {
+        $("mic-note").className = "mic-note warn";
+        $("mic-note").textContent = micUnavailableText();
+      }
+      setMicOffClass();
+      const hint = $("install-hint");
+      if (hint && IS_IOS && !IS_STANDALONE) {
+        hint.textContent = "Install on iPhone: Share → Add to Home Screen. If speaking doesn't work in the installed app, use it here in Safari.";
+        hint.classList.add("visible");
+      }
+    }
+
+    function abortRecognition() {
+      clearRecogWatchdog();
+      pendingAdvance = false;
+      if (!recognition) {
+        recognizing = false;
+        $("mic-btn").classList.remove("listening");
+        return;
+      }
+      try {
+        recognition.onresult = null;
+        recognition.onerror = null;
+        recognition.onend = null;
+        recognition.abort();
+      } catch (_) {
+        try { recognition.stop(); } catch (_) {}
+      }
+      recognition = null;
+      recognizing = false;
+      $("mic-btn").classList.remove("listening");
+    }
+
+    /** Soft-stop: recognition.stop() keeps handlers until onend so we can advance with lastTranscript. */
+    function finishListening(opts) {
+      const advance = !!(opts && opts.advance);
+      pendingAdvance = advance;
+      pendingRelisten = false;
+      if (!recognition || !recognizing) {
+        if (advance) {
+          const turn = currentScenario && currentScenario.turns[turnIndex];
+          const choices = turn && turn.choices;
+          handleSpokenFinal(lastTranscript || "", choices, { forceAdvance: true });
+        }
+        return;
+      }
+      $("mic-btn").classList.remove("listening");
+      if (advance) {
+        const heard = (lastTranscript || "").trim();
+        $("mic-note").className = "mic-note";
+        $("mic-note").textContent = heard ? ("Heard: " + heard + " — continuing…") : "Continuing…";
+        $("mic-hint").innerHTML = "<strong>Done</strong> — continuing…";
+      }
+      try {
+        // Keep onresult/onend — do NOT null handlers or abort
+        const recRef = recognition;
+        recognition.stop();
+        if (advance) {
+          // iOS Safari sometimes never fires onend after stop() — advance anyway
+          setTimeout(() => {
+            if (pendingAdvance && recognition === recRef && !advancingFromSpeech) {
+              const turn = currentScenario && currentScenario.turns[turnIndex];
+              handleSpokenFinal(lastTranscript || "", turn && turn.choices, { forceAdvance: true });
+            }
+          }, 1500);
+        }
+      } catch (_) {
+        // If stop fails, fall back to advancing with what we have
+        recognizing = false;
+        if (advance) {
+          const turn = currentScenario && currentScenario.turns[turnIndex];
+          const choices = turn && turn.choices;
+          handleSpokenFinal(lastTranscript || "", choices, { forceAdvance: true });
+        }
+      }
+    }
+
+    // Legacy name used by session teardown / choice taps — always hard discard
+    function stopRecognition() {
+      abortRecognition();
+    }
+
+    function updateMicAvailability() {
+      const btn = $("mic-btn");
+      const area = $("mic-area");
+      if (area.hidden) return;
+      setMicOffClass();
+      const blocked = isSpeaking || !micSupported || micDenied;
+      btn.disabled = blocked;
+      if (isSpeaking) {
+        $("mic-hint").innerHTML = "Partner is speaking… mic paused";
+      } else if (micDenied) {
+        $("mic-hint").innerHTML = "Mic blocked — optional tap a choice below";
+      } else if (!micSupported) {
+        $("mic-hint").innerHTML = "Mic unavailable — tap a choice below";
+      } else if (recognizing) {
+        $("mic-hint").innerHTML = "<strong>Listening…</strong> tap mic when done to continue";
+      } else {
+        $("mic-hint").innerHTML = "<strong>Speak your reply</strong> — the conversation continues · tap mic to re-listen";
+      }
+    }
+
+    function normalizeSpanish(s) {
+      return (s || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[¿?¡!.,;:…"'"«»]/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function keywords(text) {
+      return normalizeSpanish(text)
+        .split(" ")
+        .filter(w => w.length > 1 && !STOPWORDS.has(w));
+    }
+
+    function scoreMatch(spoken, choiceEs) {
+      const a = normalizeSpanish(spoken);
+      const b = normalizeSpanish(choiceEs);
+      if (!a || !b) return 0;
+      if (a === b) return 100;
+      if (a.includes(b) || b.includes(a)) return 90;
+
+      const kw = keywords(choiceEs);
+      if (kw.length === 0) return a.includes(b) ? 80 : 0;
+      let hit = 0;
+      kw.forEach(w => {
+        if (a.includes(w)) hit += 1;
+      });
+      const ratio = hit / kw.length;
+      // Prefer more keyword hits; bonus for longer overlap
+      let score = ratio * 80;
+      if (hit >= 2) score += 10;
+      if (hit === kw.length && kw.length >= 2) score += 10;
+      return score;
+    }
+
+    function matchSpokenToChoice(spoken, choices) {
+      if (!spoken || !choices || !choices.length) return null;
+      let best = null;
+      let bestScore = 0;
+      choices.forEach((c, i) => {
+        const sc = scoreMatch(spoken, c.es);
+        if (sc > bestScore) {
+          bestScore = sc;
+          best = { choice: c, index: i, score: sc };
+        }
+      });
+      // Soft match for optional highlight feedback (advancement does not require this)
+      if (best && bestScore >= 30) return best;
+      return null;
+    }
+
+    async function ensureMicPermission() {
+      if (micPermissionAsked) return !micDenied;
+      micPermissionAsked = true;
+      // iOS: let SpeechRecognition ask for the mic itself. A separate getUserMedia probe
+      // switches the audio session to record mode and can make partner speech quiet.
+      if (IS_IOS) return true;
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        // Still try recognition; some browsers grant via SpeechRecognition alone
+        return true;
+      }
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        stream.getTracks().forEach(t => t.stop());
+        micDenied = false;
+        $("mic-note").className = "mic-note";
+        $("mic-note").textContent = "Speak your reply — the conversation continues. Choices are optional.";
+        return true;
+      } catch (err) {
+        micDenied = true;
+        $("mic-note").className = "mic-note warn";
+        $("mic-note").textContent = "Microphone permission denied. You can still tap a reply below.";
+        updateMicAvailability();
+        return false;
+      }
+    }
+
+    function cancelAutoListen() {
+      if (autoListenTimer) {
+        clearTimeout(autoListenTimer);
+        autoListenTimer = null;
+      }
+    }
+
+    function scheduleAutoListen(delayMs) {
+      cancelAutoListen();
+      const delay = typeof delayMs === "number" ? delayMs : 350;
+      autoListenTimer = setTimeout(() => {
+        autoListenTimer = null;
+        if (!currentScenario || isSpeaking || recognizing || advancingFromSpeech) return;
+        const turn = currentScenario.turns[turnIndex];
+        if (!turn || !turn.choices) return;
+        if (!micSupported || micDenied || micUnreliable) return;
+        startListening();
+      }, delay);
+    }
+
+    function startListening() {
+      cancelAutoListen();
+      if (isSpeaking || !micSupported || micDenied || recognizing || advancingFromSpeech) return;
+      const turn = currentScenario && currentScenario.turns[turnIndex];
+      if (!turn || !turn.choices) return;
+
+      const Ctor = getSpeechRecognitionCtor();
+      if (!Ctor) return;
+
+      abortRecognition();
+      lastTranscript = "";
+      pendingAdvance = false;
+
+      recognition = new Ctor();
+      recognition.lang = "es-ES";
+      recognition.interimResults = true;
+      recognition.continuous = false;
+      recognition.maxAlternatives = 3;
+
+      const transcriptEl = $("transcript");
+      transcriptEl.className = "transcript interim";
+      transcriptEl.textContent = "…";
+      $("mic-note").className = "mic-note";
+      $("mic-note").textContent = "Listening… speak now — tap mic when done to continue";
+      $("mic-hint").innerHTML = "<strong>Listening…</strong> tap mic when done to continue";
+
+      recognizing = true;
+      $("mic-btn").classList.add("listening");
+
+      const listenChoices = turn.choices;
+      const thisRec = recognition;
+      const armWatchdog = () => {
+        clearRecogWatchdog();
+        recogWatchdog = setTimeout(() => {
+          recogWatchdog = null;
+          if (recognition !== thisRec || !recognizing || advancingFromSpeech) return;
+          const heard = (lastTranscript || "").trim();
+          if (heard) {
+            // Results arrived but recognition never ended (common on iOS) — use what we have
+            handleSpokenFinal(heard, listenChoices, { forceAdvance: false });
+            return;
+          }
+          onRecognitionStall();
+        }, RECOG_IDLE_MS);
+      };
+      armWatchdog();
+
+      recognition.onresult = (event) => {
+        armWatchdog();
+        if (micStallCount || micUnreliable) {
+          micStallCount = 0;
+          micUnreliable = false;
+          setMicOffClass();
+        }
+        let interim = "";
+        let finalText = "";
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+          const r = event.results[i];
+          if (r.isFinal) finalText += r[0].transcript;
+          else interim += r[0].transcript;
+        }
+        const chunk = (finalText || interim || "").trim();
+        if (chunk) {
+          lastTranscript = chunk;
+        }
+        if (finalText) {
+          transcriptEl.className = "transcript";
+          transcriptEl.textContent = finalText.trim();
+          // Prefer advancing from onend (Chrome often omits isFinal); if we got final, mark for onend
+          lastTranscript = finalText.trim();
+        } else if (interim) {
+          transcriptEl.className = "transcript interim";
+          transcriptEl.textContent = interim.trim();
+        }
+      };
+
+      recognition.onerror = (event) => {
+        const err = event.error || "";
+        if (IS_IOS && IS_STANDALONE && (err === "not-allowed" || err === "service-not-allowed" || err === "audio-capture")) {
+          // Installed iPhone web apps may not get speech recognition at all
+          clearRecogWatchdog();
+          recognizing = false;
+          $("mic-btn").classList.remove("listening");
+          micSupported = false;
+          $("mic-note").className = "mic-note warn";
+          $("mic-note").textContent = micUnavailableText();
+          updateMicAvailability();
+        } else if (err === "not-allowed" || err === "service-not-allowed") {
+          clearRecogWatchdog();
+          recognizing = false;
+          $("mic-btn").classList.remove("listening");
+          micDenied = true;
+          $("mic-note").className = "mic-note warn";
+          $("mic-note").textContent = IS_IOS
+            ? "Mic or Speech Recognition is off. Check Settings → Safari → Microphone, and that Siri/Dictation is enabled. Tap a choice below."
+            : "Mic permission denied. Tap a choice below.";
+          updateMicAvailability();
+        } else if (err === "no-speech") {
+          // Let onend handle empty / advance path
+          $("mic-note").className = "mic-note warn";
+          $("mic-note").textContent = "Didn't catch that — tap mic or say again";
+        } else if (err === "aborted") {
+          // Intentional abort — ignore
+        } else {
+          $("mic-note").className = "mic-note warn";
+          $("mic-note").textContent = "Recognition error — tap mic to re-listen, or tap a choice.";
+        }
+      };
+
+      recognition.onend = () => {
+        clearRecogWatchdog();
+        recognizing = false;
+        $("mic-btn").classList.remove("listening");
+        const shouldAdvance = pendingAdvance;
+        const heard = (lastTranscript || "").trim();
+        pendingAdvance = false;
+
+        if (advancingFromSpeech) {
+          recognition = null;
+          return;
+        }
+
+        if (shouldAdvance) {
+          handleSpokenFinal(heard, listenChoices, { forceAdvance: true });
+          recognition = null;
+          return;
+        }
+
+        if (heard) {
+          // Natural end (silence) with interim-only transcript — Chrome often never sends isFinal
+          handleSpokenFinal(heard, listenChoices, { forceAdvance: false });
+          recognition = null;
+          return;
+        }
+
+        // Empty — stay on turn, prompt, one auto-relisten
+        transcriptEl.className = "transcript fail";
+        transcriptEl.textContent = "";
+        $("mic-note").className = "mic-note warn";
+        $("mic-note").textContent = "Didn't catch that — tap mic or say again";
+        updateMicAvailability();
+        recognition = null;
+        if (currentScenario && !isSpeaking && !pendingRelisten) {
+          pendingRelisten = true;
+          scheduleAutoListen(900);
+        }
+      };
+
+      try {
+        recognition.start();
+      } catch (_) {
+        recognizing = false;
+        $("mic-btn").classList.remove("listening");
+        recognition = null;
+        $("mic-note").className = "mic-note warn";
+        $("mic-note").textContent = "Could not start mic. Tap a choice below.";
+      }
+    }
+
+    function onRecognitionStall() {
+      abortRecognition();
+      micStallCount += 1;
+      if (micStallCount >= 2) micUnreliable = true;
+      const t = $("transcript");
+      t.className = "transcript fail";
+      t.textContent = "";
+      $("mic-note").className = "mic-note warn";
+      $("mic-note").textContent = micUnreliable
+        ? "The mic isn't responding on this device — tap 🎤 to try again, or tap a reply below."
+        : "Mic didn't respond — tap 🎤 to try again, or tap a reply below.";
+      updateMicAvailability();
+    }
+
+    function handleSpokenFinal(spoken, choices, opts) {
+      const forceAdvance = !!(opts && opts.forceAdvance);
+      if (advancingFromSpeech) return;
+      clearRecogWatchdog();
+
+      const heard = (spoken || "").trim();
+      const transcriptEl = $("transcript");
+
+      // Soft-stop already ran; hard-clean any leftover recognition without discarding path
+      if (recognition) {
+        try {
+          recognition.onresult = null;
+          recognition.onerror = null;
+          recognition.onend = null;
+          try { recognition.stop(); } catch (_) { try { recognition.abort(); } catch (_) {} }
+        } catch (_) {}
+        recognition = null;
+      }
+      recognizing = false;
+      $("mic-btn").classList.remove("listening");
+      pendingAdvance = false;
+
+      if (!heard && !forceAdvance) {
+        transcriptEl.className = "transcript fail";
+        transcriptEl.textContent = "No speech heard";
+        $("mic-note").className = "mic-note warn";
+        $("mic-note").textContent = "Didn't catch that — tap mic or say again";
+        updateMicAvailability();
+        return;
+      }
+
+      const match = heard ? matchSpokenToChoice(heard, choices) : null;
+      transcriptEl.className = "transcript ok";
+      if (heard) {
+        transcriptEl.textContent = "Heard: " + heard;
+      } else {
+        transcriptEl.textContent = "Continuing…";
+      }
+      $("mic-note").className = "mic-note";
+      if (match) {
+        $("mic-note").textContent = "Closest: " + match.choice.es + " — continuing…";
+        const buttons = $("choices").querySelectorAll(".choice-btn");
+        if (buttons[match.index]) buttons[match.index].classList.add("match-flash");
+      } else if (heard) {
+        $("mic-note").textContent = "Got it — continuing…";
+      } else {
+        $("mic-note").textContent = "Continuing…";
+      }
+      $("mic-btn").classList.add("success");
+      advancingFromSpeech = true;
+      pendingRelisten = false;
+      cancelAutoListen();
+      setTimeout(() => {
+        $("mic-btn").classList.remove("success");
+        advancingFromSpeech = false;
+        onChoose(match ? match.choice : null);
+      }, 450);
+    }
+
+    function onMicActivate() {
+      if (isSpeaking || advancingFromSpeech) return;
+      if (!micPermissionAsked && !IS_IOS) {
+        ensureMicPermission().then((ok) => { if (ok) micActivateNow(); });
+        return;
+      }
+      micPermissionAsked = true;
+      if (micDenied) return;
+      // Synchronous path keeps the tap's user-gesture (needed on iOS for recognition.start)
+      micActivateNow();
+    }
+
+    function micActivateNow() {
+      if (isSpeaking || advancingFromSpeech) return;
+      if (recognizing) {
+        // Done speaking → continue conversation (never just abort and sit)
+        finishListening({ advance: true });
+        return;
+      }
+      pendingRelisten = false; // manual tap — allow a future empty auto-relisten
+      startListening();
+    }
+
+    function wireMicButton() {
+      const btn = $("mic-btn");
+      let holdTimer = null;
+      let held = false;
+
+      const clearHold = () => {
+        if (holdTimer) {
+          clearTimeout(holdTimer);
+          holdTimer = null;
+        }
+      };
+
+      btn.addEventListener("pointerdown", (e) => {
+        if (btn.disabled) return;
+        e.preventDefault();
+        held = false;
+        clearHold();
+        // Mouse: keep the quick press-and-hold start. Touch (iOS/Android): start on pointerup,
+        // because a timer callback is not a user gesture and iOS may refuse to start the mic.
+        if (e.pointerType === "mouse") {
+          holdTimer = setTimeout(() => {
+            held = true;
+            onMicActivate();
+          }, 180);
+        }
+      });
+      btn.addEventListener("pointerup", (e) => {
+        e.preventDefault();
+        clearHold();
+        if (btn.disabled) return;
+        primeAudio();
+        if (!held) onMicActivate();
+      });
+      btn.addEventListener("pointercancel", () => {
+        clearHold();
+      });
+      btn.addEventListener("pointerleave", () => {
+        clearHold();
+      });
+      // Keyboard
+      btn.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onMicActivate();
+        }
+      });
+    }
+
+    /* ========== UI SCREENS ========== */
+    function showScreen(name) {
+      ["home", "session", "summary"].forEach(id => {
+        $(id).classList.toggle("active", id === name);
+      });
+    }
+
+    function renderHome() {
+      const list = $("scenario-list");
+      list.innerHTML = "";
+      SCENARIOS.forEach(s => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "scenario-card";
+        btn.innerHTML = `
+          <div class="scenario-title"><span class="scenario-emoji">${s.emoji}</span>${s.title}</div>
+          <div class="scenario-desc">${s.description}</div>
+        `;
+        btn.addEventListener("click", () => { primeAudio(); startSession(s.id); });
+        list.appendChild(btn);
+      });
+    }
+
+    function formatTime(sec) {
+      const m = Math.floor(sec / 60);
+      const s = sec % 60;
+      return `${m}:${String(s).padStart(2, "0")}`;
+    }
+
+    function updateTimerDisplay() {
+      const el = $("timer");
+      el.textContent = formatTime(secondsLeft);
+      el.classList.toggle("warn", secondsLeft <= 30 && secondsLeft > 10);
+      el.classList.toggle("danger", secondsLeft <= 10);
+    }
+
+    function stopTimer() {
+      if (timerId) {
+        clearInterval(timerId);
+        timerId = null;
+      }
+    }
+
+    function startTimer() {
+      stopTimer();
+      secondsLeft = SESSION_SECONDS;
+      updateTimerDisplay();
+      timerId = setInterval(() => {
+        secondsLeft -= 1;
+        updateTimerDisplay();
+        if (secondsLeft <= 0) {
+          stopTimer();
+          endSession("time");
+        }
+      }, 1000);
+    }
+
+    function renderTurn(opts) {
+      const autoSpeak = !opts || opts.autoSpeak !== false;
+      const turn = currentScenario.turns[turnIndex];
+      if (!turn) {
+        endSession("complete");
+        return;
+      }
+
+      if (finalEndTimer) {
+        clearTimeout(finalEndTimer);
+        finalEndTimer = null;
+      }
+      cancelAutoListen();
+      advancingFromSpeech = false;
+      lastTranscript = "";
+      pendingAdvance = false;
+      pendingRelisten = false;
+
+      stopRecognition();
+      $("transcript").textContent = "";
+      $("transcript").className = "transcript";
+      $("mic-btn").classList.remove("success", "listening");
+
+      $("partner-es").textContent = turn.partner.es;
+      $("partner-en").textContent = turn.partner.en;
+      englishVisible = false;
+      $("partner-en").classList.add("hidden");
+      $("btn-translate").textContent = "Show English";
+
+      const choicesEl = $("choices");
+      choicesEl.innerHTML = "";
+      const micArea = $("mic-area");
+
+      if (!turn.choices) {
+        $("choices-label").textContent = "Conversation complete";
+        $("waiting").hidden = true;
+        micArea.hidden = true;
+        choicesEl.innerHTML = `<p class="waiting">Tap End or wait for the timer — or continue listening.</p>`;
+        finalEndTimer = setTimeout(() => {
+          if (currentScenario && turnIndex === currentScenario.turns.length - 1) {
+            endSession("complete");
+          }
+        }, 3500);
+      } else {
+        $("choices-label").textContent = "Your turn — speak to continue";
+        $("waiting").hidden = true;
+        micArea.hidden = false;
+        if (!micSupported) {
+          $("mic-note").className = "mic-note warn";
+          $("mic-note").textContent = micUnavailableText();
+        } else if (micDenied) {
+          $("mic-note").className = "mic-note warn";
+          $("mic-note").textContent = "Mic blocked. Tap a reply below.";
+        } else {
+          $("mic-note").className = "mic-note";
+          $("mic-note").textContent = "After the partner speaks, listening starts automatically.";
+        }
+        updateMicAvailability();
+
+        const fallbackLabel = document.createElement("div");
+        fallbackLabel.className = "choices-fallback-label";
+        fallbackLabel.textContent = "Optional — tap a reply if needed";
+        choicesEl.appendChild(fallbackLabel);
+
+        turn.choices.forEach(c => {
+          const b = document.createElement("button");
+          b.type = "button";
+          b.className = "choice-btn";
+          b.innerHTML = `<span class="choice-es">${c.es}</span><span class="choice-en">${c.en}</span>`;
+          b.addEventListener("click", () => {
+            cancelAutoListen();
+            stopRecognition();
+            onChoose(c);
+          });
+          choicesEl.appendChild(b);
+        });
+      }
+
+      updateVoiceStatusUI();
+
+      if (autoSpeak) {
+        if (needsUserGesture && turnIndex === 0) {
+          showGestureBanner(true);
+        } else {
+          showGestureBanner(false);
+          speakCurrent(1);
+        }
+      }
+    }
+
+    function onChoose(_choice) {
+      turnIndex += 1;
+      if (turnIndex >= currentScenario.turns.length) {
+        endSession("complete");
+        return;
+      }
+      renderTurn();
+    }
+
+    function startSession(id) {
+      const s = SCENARIOS.find(x => x.id === id);
+      if (!s) return;
+      currentScenario = s;
+      lastScenarioId = id;
+      turnIndex = 0;
+      englishVisible = false;
+      stopAllSpeech();
+      stopRecognition();
+      // Fresh session: first auto-speak may need gesture on remote/Linux desktops
+      needsUserGesture = true;
+      $("session-title").textContent = `${s.emoji} ${s.title}`;
+      showScreen("session");
+      startTimer();
+      loadVoices();
+      renderTurn({ autoSpeak: true });
+    }
+
+    function endSession(reason) {
+      stopTimer();
+      cancelAutoListen();
+      stopAllSpeech();
+      stopRecognition();
+      if (finalEndTimer) {
+        clearTimeout(finalEndTimer);
+        finalEndTimer = null;
+      }
+      showGestureBanner(false);
+
+      const practiced = SESSION_SECONDS - Math.max(0, secondsLeft);
+      const mins = Math.floor(practiced / 60);
+      const secs = practiced % 60;
+      const timeStr = mins > 0 ? `${mins} min ${secs} s` : `${secs} seconds`;
+
+      $("summary-heading").textContent = reason === "complete" ? "¡Diálogo completo!" : "¡Tiempo!";
+      $("summary-sub").textContent =
+        reason === "complete"
+          ? `You finished the conversation (${timeStr}).`
+          : `Time's up — nice listen & speak practice (${timeStr}).`;
+      $("summary-scenario").textContent = currentScenario
+        ? `Scenario: ${currentScenario.emoji} ${currentScenario.title}`
+        : "";
+
+      const list = $("summary-phrases");
+      list.innerHTML = "<li style='color:var(--muted);font-size:0.85rem;border:none;padding-bottom:0.25rem'>Phrases you practiced:</li>";
+      (currentScenario?.phrases || []).forEach(p => {
+        const li = document.createElement("li");
+        li.innerHTML = `<span class="phrase">${p}</span>`;
+        list.appendChild(li);
+      });
+
+      showScreen("summary");
+      currentScenario = null;
+    }
+
+    /* ========== EVENTS ========== */
+    $("btn-play").addEventListener("click", async () => {
+      primeAudio(); // must run synchronously in the tap (iOS)
+      needsUserGesture = false;
+      showGestureBanner(false);
+      cancelAutoListen();
+      stopRecognition();
+      if (micSupported && !micDenied && !micPermissionAsked) await ensureMicPermission();
+      await speakCurrent(1);
+    });
+    $("btn-slow").addEventListener("click", async () => {
+      primeAudio(); // must run synchronously in the tap (iOS)
+      needsUserGesture = false;
+      showGestureBanner(false);
+      cancelAutoListen();
+      stopRecognition();
+      if (micSupported && !micDenied && !micPermissionAsked) await ensureMicPermission();
+      await speakCurrent(0.75);
+    });
+    $("btn-start-listening").addEventListener("click", async () => {
+      primeAudio(); // must run synchronously in the tap (iOS)
+      needsUserGesture = false;
+      showGestureBanner(false);
+      cancelAutoListen();
+      stopRecognition();
+      if (micSupported && !micDenied && !micPermissionAsked) await ensureMicPermission();
+      await speakCurrent(1);
+    });
+    $("btn-translate").addEventListener("click", () => {
+      englishVisible = !englishVisible;
+      $("partner-en").classList.toggle("hidden", !englishVisible);
+      $("btn-translate").textContent = englishVisible ? "Hide English" : "Show English";
+    });
+    $("btn-end-early").addEventListener("click", () => endSession("early"));
+    $("btn-home").addEventListener("click", () => {
+      showScreen("home");
+      updateVoiceStatusUI();
+    });
+    $("btn-again").addEventListener("click", () => {
+      primeAudio();
+      if (lastScenarioId) startSession(lastScenarioId);
+      else showScreen("home");
+    });
+    $("toggle-cloud-voice").addEventListener("change", (e) => {
+      useCloudVoice = !!e.target.checked;
+      updateVoiceStatusUI();
+    });
+
+    wireMicButton();
+    initRecognitionSupport();
+    waitForVoices();
+    renderHome();
+
+    /* ========== PWA: service worker (offline + auto-update) ========== */
+    if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost" || location.hostname === "127.0.0.1")) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("sw.js").then((reg) => {
+          // Check for a new version whenever the app comes back to the foreground
+          document.addEventListener("visibilitychange", () => {
+            if (document.visibilityState === "visible") reg.update().catch(() => {});
+          });
+        }).catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>
