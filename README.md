@@ -56,12 +56,12 @@ On remote Linux desktops, local TTS is often missing — use **Use cloud voice**
 
 ## Scenarios
 
-1. **Hotel check-in** — reservation, room, breakfast  
-2. **Taking a taxi** — destination, time, fare  
-3. **A phone call** — leave a message, set a time  
-4. **At the doctor** — symptoms, medicine  
-5. **Making plans** — dinner invite, day and place  
-6. **At the airport** — gate, delay, boarding  
+1. **At the café** — order, size, pay  
+2. **At a restaurant** — table, food, bill  
+3. **Asking for directions** — left, right, distance  
+4. **Shopping for clothes** — size, color, fitting room  
+5. **At the post office** — package, stamps, delivery time  
+6. **Meeting someone new** — name, origin, work  
 
 ## Caveats
 
