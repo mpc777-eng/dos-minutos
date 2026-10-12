@@ -642,319 +642,319 @@
     /* ========== SCENARIOS ========== */
     const SCENARIOS = [
       {
-        id: "cafe",
-        emoji: "☕",
-        title: "At the café",
-        description: "Order a coffee, pick a size, and pay.",
-        phrases: ["Un café con leche", "¿Me pone…?", "La cuenta, por favor"],
+        id: "library",
+        emoji: "📚",
+        title: "At the library",
+        description: "Ask for a book, get a card, and borrow something to read.",
+        phrases: ["Busco un libro…", "¿Puedo sacar…?", "¿Hasta cuándo?"],
         turns: [
           {
-            partner: { es: "¡Hola! ¿Qué le pongo?", en: "Hi! What can I get you?" },
+            partner: { es: "Buenos días. ¿En qué le puedo ayudar?", en: "Good morning. How can I help you?" },
             choices: [
-              { es: "Un café con leche, por favor.", en: "A coffee with milk, please." },
-              { es: "¿Me pone un té?", en: "Can I have a tea?" },
-              { es: "Un café solo, por favor.", en: "A black coffee, please." }
+              { es: "Busco un libro en español.", en: "I am looking for a book in Spanish." },
+              { es: "¿Dónde están las novelas?", en: "Where are the novels?" },
+              { es: "Quiero aprender español. ¿Hay libros fáciles?", en: "I want to learn Spanish. Are there easy books?" }
             ]
           },
           {
-            partner: { es: "Muy bien. ¿Pequeño o grande?", en: "Very good. Small or large?" },
+            partner: { es: "Sí. Tenemos libros para principiantes. ¿Tiene carnet?", en: "Yes. We have books for beginners. Do you have a library card?" },
             choices: [
-              { es: "Pequeño, por favor.", en: "Small, please." },
-              { es: "Grande, por favor.", en: "Large, please." },
-              { es: "Mediano. ¿Hay mediano?", en: "Medium. Is there a medium?" }
+              { es: "No. ¿Cómo consigo uno?", en: "No. How do I get one?" },
+              { es: "Sí, aquí está.", en: "Yes, here it is." },
+              { es: "Todavía no. ¿Es gratis?", en: "Not yet. Is it free?" }
             ]
           },
           {
-            partner: { es: "Claro. ¿Quiere algo de comer?", en: "Of course. Would you like something to eat?" },
+            partner: { es: "Es gratis. Solo necesito su nombre y su dirección.", en: "It is free. I just need your name and address." },
             choices: [
-              { es: "Sí. Una tostada, por favor.", en: "Yes. A piece of toast, please." },
-              { es: "No, gracias. Solo el café.", en: "No, thanks. Just the coffee." },
-              { es: "¿Qué tiene de comer?", en: "What do you have to eat?" }
+              { es: "Me llamo Matthew. Vivo cerca.", en: "My name is Matthew. I live nearby." },
+              { es: "Perfecto. ¿Qué papeles necesito?", en: "Perfect. What papers do I need?" },
+              { es: "Muy bien. ¿Puedo sacar un libro hoy?", en: "Very good. Can I borrow a book today?" }
             ]
           },
           {
-            partner: { es: "Tenemos tostadas y magdalenas. ¿Para tomar aquí?", en: "We have toast and muffins. To have here?" },
+            partner: { es: "Claro. Este libro es muy bueno para empezar. ¿Lo quiere?", en: "Of course. This book is very good to start. Do you want it?" },
             choices: [
-              { es: "Sí, para tomar aquí.", en: "Yes, to have here." },
-              { es: "No. Para llevar, por favor.", en: "No. To go, please." },
-              { es: "Aquí. En la terraza, por favor.", en: "Here. On the terrace, please." }
+              { es: "Sí, por favor. ¿Hasta cuándo lo tengo?", en: "Yes, please. Until when do I have it?" },
+              { es: "¿Hay audiolibros también?", en: "Are there audiobooks too?" },
+              { es: "Sí. ¿Cuántos libros puedo sacar?", en: "Yes. How many books can I borrow?" }
             ]
           },
           {
-            partner: { es: "Perfecto. Son tres euros con veinte.", en: "Perfect. That is three euros twenty." },
+            partner: { es: "Dos semanas. Puede renovarlo online. ¿Algo más?", en: "Two weeks. You can renew it online. Anything else?" },
             choices: [
-              { es: "Aquí tiene. Gracias.", en: "Here you go. Thanks." },
-              { es: "¿Puedo pagar con tarjeta?", en: "Can I pay by card?" },
-              { es: "Muy bien. Quédese con el cambio.", en: "Very good. Keep the change." }
-            ]
-          },
-          {
-            partner: { es: "Gracias. ¡Que aproveche!", en: "Thank you. Enjoy!" },
-            choices: null
-          }
-        ]
-      },
-      {
-        id: "restaurant",
-        emoji: "🍽️",
-        title: "At a restaurant",
-        description: "Get a table, order food and drinks, and ask for the bill.",
-        phrases: ["Una mesa para dos", "Para mí, …", "La cuenta, por favor"],
-        turns: [
-          {
-            partner: { es: "Buenas noches. ¿Cuántas personas?", en: "Good evening. How many people?" },
-            choices: [
-              { es: "Una mesa para dos, por favor.", en: "A table for two, please." },
-              { es: "Somos cuatro.", en: "There are four of us." },
-              { es: "Solo yo. Una persona.", en: "Just me. One person." }
-            ]
-          },
-          {
-            partner: { es: "Por aquí, por favor. ¿Qué quieren beber?", en: "This way, please. What would you like to drink?" },
-            choices: [
-              { es: "Agua, por favor.", en: "Water, please." },
-              { es: "Una copa de vino tinto.", en: "A glass of red wine." },
-              { es: "Un refresco, por favor.", en: "A soft drink, please." }
-            ]
-          },
-          {
-            partner: { es: "Muy bien. ¿Ya saben qué van a comer?", en: "Very good. Do you know what you will eat?" },
-            choices: [
-              { es: "Para mí, el pollo, por favor.", en: "For me, the chicken, please." },
-              { es: "Quiero la paella.", en: "I want the paella." },
-              { es: "¿Qué me recomienda?", en: "What do you recommend?" }
-            ]
-          },
-          {
-            partner: { es: "Excelente. ¿Quieren postre después?", en: "Excellent. Would you like dessert afterward?" },
-            choices: [
-              { es: "Sí. ¿Qué postres tienen?", en: "Yes. What desserts do you have?" },
-              { es: "No, gracias. Estoy lleno.", en: "No, thanks. I am full." },
-              { es: "Un flan, por favor.", en: "A flan, please." }
-            ]
-          },
-          {
-            partner: { es: "Aquí tienen. ¿Algo más?", en: "Here you are. Anything else?" },
-            choices: [
-              { es: "La cuenta, por favor.", en: "The bill, please." },
-              { es: "No, gracias. Todo muy rico.", en: "No, thanks. Everything was delicious." },
-              { es: "Un café, por favor.", en: "A coffee, please." }
-            ]
-          },
-          {
-            partner: { es: "Enseguida. ¡Gracias por venir!", en: "Right away. Thanks for coming!" },
-            choices: null
-          }
-        ]
-      },
-      {
-        id: "directions",
-        emoji: "🗺️",
-        title: "Asking for directions",
-        description: "Ask how to get somewhere, follow left and right, and check the distance.",
-        phrases: ["¿Dónde está…?", "¿Está lejos?", "A la derecha / a la izquierda"],
-        turns: [
-          {
-            partner: { es: "Hola. ¿Necesita ayuda?", en: "Hi. Do you need help?" },
-            choices: [
-              { es: "Sí. ¿Dónde está el museo?", en: "Yes. Where is the museum?" },
-              { es: "Perdón. Busco la estación.", en: "Excuse me. I am looking for the station." },
-              { es: "Sí. ¿Hay un banco cerca?", en: "Yes. Is there a bank nearby?" }
-            ]
-          },
-          {
-            partner: { es: "Siga todo recto y gire a la derecha.", en: "Go straight ahead and turn right." },
-            choices: [
-              { es: "¿Todo recto y a la derecha?", en: "Straight ahead and to the right?" },
-              { es: "¿Puede repetir, por favor?", en: "Can you repeat, please?" },
-              { es: "Más despacio, por favor.", en: "More slowly, please." }
-            ]
-          },
-          {
-            partner: { es: "Sí. Recto, y en la plaza, a la derecha.", en: "Yes. Straight, and at the square, to the right." },
-            choices: [
-              { es: "¿Está lejos?", en: "Is it far?" },
-              { es: "¿Puedo ir a pie?", en: "Can I walk there?" },
-              { es: "Entiendo. ¿Y luego?", en: "I understand. And then?" }
-            ]
-          },
-          {
-            partner: { es: "No, está cerca. Cinco minutos a pie.", en: "No, it is close. Five minutes on foot." },
-            choices: [
-              { es: "Perfecto. ¿Hay un café cerca?", en: "Perfect. Is there a café nearby?" },
-              { es: "Muy bien. ¿Está a la izquierda?", en: "Very good. Is it on the left?" },
-              { es: "¡Qué bien! Muchas gracias.", en: "Great! Thank you very much." }
-            ]
-          },
-          {
-            partner: { es: "Está a la izquierda, al lado del parque.", en: "It is on the left, next to the park." },
-            choices: [
-              { es: "Gracias por su ayuda.", en: "Thanks for your help." },
-              { es: "Muy amable. Adiós.", en: "Very kind. Goodbye." },
+              { es: "No, eso es todo. Gracias.", en: "No, that is all. Thanks." },
+              { es: "Sí. ¿Dónde está el Wi-Fi?", en: "Yes. Where is the Wi-Fi?" },
               { es: "Perfecto. ¡Hasta luego!", en: "Perfect. See you later!" }
             ]
           },
           {
-            partner: { es: "De nada. ¡Que le vaya bien!", en: "You are welcome. All the best!" },
+            partner: { es: "De nada. ¡Que disfrute la lectura!", en: "You are welcome. Enjoy the reading!" },
             choices: null
           }
         ]
       },
       {
-        id: "clothes",
-        emoji: "👕",
-        title: "Shopping for clothes",
-        description: "Ask for a size and color, try something on, and pay.",
-        phrases: ["¿Tiene esto en…?", "¿Puedo probármelo?", "Me queda bien"],
+        id: "weather",
+        emoji: "🌤️",
+        title: "Talking about the weather",
+        description: "Chat about sun, rain, and what to wear today.",
+        phrases: ["Hace calor / frío", "¿Va a llover?", "Qué tiempo hace"],
         turns: [
           {
-            partner: { es: "Hola. ¿Le puedo ayudar?", en: "Hi. Can I help you?" },
+            partner: { es: "¡Hola! ¿Qué tiempo hace hoy?", en: "Hi! What is the weather like today?" },
             choices: [
-              { es: "Sí. Busco una camisa.", en: "Yes. I am looking for a shirt." },
-              { es: "Busco unos pantalones.", en: "I am looking for some pants." },
-              { es: "Solo estoy mirando, gracias.", en: "I am just looking, thanks." }
+              { es: "Hace mucho sol.", en: "It is very sunny." },
+              { es: "Hace un poco de frío.", en: "It is a little cold." },
+              { es: "Está nublado.", en: "It is cloudy." }
             ]
           },
           {
-            partner: { es: "Muy bien. ¿Qué talla usa?", en: "Very good. What size do you wear?" },
+            partner: { es: "Sí. ¿Va a llover esta tarde?", en: "Yes. Is it going to rain this afternoon?" },
             choices: [
-              { es: "La talla mediana.", en: "Medium size." },
-              { es: "Talla grande, por favor.", en: "Large size, please." },
-              { es: "No sé. ¿Pequeña?", en: "I do not know. Small?" }
+              { es: "Creo que sí. Voy a llevar un paraguas.", en: "I think so. I am going to bring an umbrella." },
+              { es: "No sé. ¿Viste el pronóstico?", en: "I do not know. Did you see the forecast?" },
+              { es: "Espero que no.", en: "I hope not." }
             ]
           },
           {
-            partner: { es: "Tenemos esta en azul y en negro. ¿Qué color prefiere?", en: "We have this one in blue and in black. Which color do you prefer?" },
+            partner: { es: "Dicen que puede llover. ¿Qué te vas a poner?", en: "They say it might rain. What are you going to wear?" },
             choices: [
-              { es: "Prefiero el azul.", en: "I prefer the blue." },
-              { es: "En negro, por favor.", en: "In black, please." },
-              { es: "¿Tiene esto en blanco?", en: "Do you have this in white?" }
+              { es: "Una chaqueta y zapatos cómodos.", en: "A jacket and comfortable shoes." },
+              { es: "Ropa ligera. Hace calor.", en: "Light clothes. It is hot." },
+              { es: "No sé. ¿Qué me recomiendas?", en: "I do not know. What do you recommend?" }
             ]
           },
           {
-            partner: { es: "Aquí tiene. ¿Quiere probársela?", en: "Here you go. Would you like to try it on?" },
+            partner: { es: "Una chaqueta es buena idea. ¿Salimos a caminar?", en: "A jacket is a good idea. Shall we go for a walk?" },
             choices: [
-              { es: "Sí. ¿Dónde está el probador?", en: "Yes. Where is the fitting room?" },
+              { es: "Sí. Antes de que llueva.", en: "Yes. Before it rains." },
+              { es: "Mejor después. Ahora hace viento.", en: "Better later. It is windy now." },
+              { es: "Claro. ¿Al parque?", en: "Sure. To the park?" }
+            ]
+          },
+          {
+            partner: { es: "Perfecto. Si llueve, tomamos un café.", en: "Perfect. If it rains, we get a coffee." },
+            choices: [
+              { es: "Buena idea. Me gusta.", en: "Good idea. I like that." },
+              { es: "Sí. ¡Vamos!", en: "Yes. Let's go!" },
+              { es: "De acuerdo. Nos vemos en cinco minutos.", en: "Agreed. See you in five minutes." }
+            ]
+          },
+          {
+            partner: { es: "¡Genial! ¡Hasta ahora!", en: "Great! See you in a bit!" },
+            choices: null
+          }
+        ]
+      },
+      {
+        id: "bus",
+        emoji: "🚌",
+        title: "At the bus stop",
+        description: "Ask which bus to take, the price, and when it arrives.",
+        phrases: ["¿Qué autobús va a…?", "¿Cuánto cuesta?", "¿Cuándo llega?"],
+        turns: [
+          {
+            partner: { es: "Hola. ¿Va usted al centro?", en: "Hi. Are you going downtown?" },
+            choices: [
+              { es: "Sí. ¿Qué autobús va al centro?", en: "Yes. Which bus goes downtown?" },
+              { es: "Busco el autobús al museo.", en: "I am looking for the bus to the museum." },
+              { es: "Sí. ¿Esta es la parada correcta?", en: "Yes. Is this the right stop?" }
+            ]
+          },
+          {
+            partner: { es: "El número doce. Para aquí cada diez minutos.", en: "Number twelve. It stops here every ten minutes." },
+            choices: [
+              { es: "Perfecto. ¿Cuánto cuesta el billete?", en: "Perfect. How much is the ticket?" },
+              { es: "¿Puedo pagar con tarjeta?", en: "Can I pay by card?" },
+              { es: "¿Cuándo llega el próximo?", en: "When does the next one arrive?" }
+            ]
+          },
+          {
+            partner: { es: "Dos euros. Puede pagar en el autobús.", en: "Two euros. You can pay on the bus." },
+            choices: [
+              { es: "Muy bien. ¿Necesito cambio exacto?", en: "Very good. Do I need exact change?" },
+              { es: "Gracias. ¿Cuántas paradas hay?", en: "Thanks. How many stops are there?" },
+              { es: "Bien. ¿Me avisa cuando llegue?", en: "Good. Will you tell me when we arrive?" }
+            ]
+          },
+          {
+            partner: { es: "Sí, el conductor puede ayudar. ¡Mire, ya viene!", en: "Yes, the driver can help. Look, here it comes!" },
+            choices: [
+              { es: "¡Qué bien! Gracias por su ayuda.", en: "Great! Thanks for your help." },
+              { es: "¿Este es el doce?", en: "Is this the twelve?" },
+              { es: "Perfecto. Subo ahora.", en: "Perfect. I am getting on now." }
+            ]
+          },
+          {
+            partner: { es: "Sí, es el doce. ¡Buen viaje!", en: "Yes, it is the twelve. Have a good trip!" },
+            choices: [
+              { es: "Gracias. ¡Hasta luego!", en: "Thanks. See you later!" },
+              { es: "Muy amable. Adiós.", en: "Very kind. Goodbye." },
+              { es: "¡Igualmente!", en: "Same to you!" }
+            ]
+          },
+          {
+            partner: { es: "De nada. ¡Que le vaya bien!", en: "You are welcome. Take care!" },
+            choices: null
+          }
+        ]
+      },
+      {
+        id: "cinema",
+        emoji: "🎬",
+        title: "At the movie theater",
+        description: "Buy tickets, pick seats, and grab a snack.",
+        phrases: ["Dos entradas…", "¿A qué hora empieza?", "¿Quedan asientos?"],
+        turns: [
+          {
+            partner: { es: "Buenas tardes. ¿Para qué película?", en: "Good afternoon. For which movie?" },
+            choices: [
+              { es: "La comedia nueva, por favor.", en: "The new comedy, please." },
+              { es: "¿Qué películas hay esta noche?", en: "What movies are there tonight?" },
+              { es: "La de acción. Dos entradas.", en: "The action one. Two tickets." }
+            ]
+          },
+          {
+            partner: { es: "Empieza a las siete. ¿Quieren asientos juntos?", en: "It starts at seven. Do you want seats together?" },
+            choices: [
+              { es: "Sí. En el centro, por favor.", en: "Yes. In the middle, please." },
+              { es: "Cerca de la pantalla.", en: "Near the screen." },
+              { es: "Atrás está bien.", en: "In the back is fine." }
+            ]
+          },
+          {
+            partner: { es: "Listo. Son dieciocho euros. ¿Algo de comer?", en: "Done. That is eighteen euros. Anything to eat?" },
+            choices: [
+              { es: "Palomitas grandes, por favor.", en: "Large popcorn, please." },
+              { es: "Dos refrescos, por favor.", en: "Two soft drinks, please." },
+              { es: "No, gracias. Solo las entradas.", en: "No, thanks. Just the tickets." }
+            ]
+          },
+          {
+            partner: { es: "Aquí tiene. Sala tres, a la izquierda.", en: "Here you go. Theater three, to the left." },
+            choices: [
+              { es: "¿Hay subtítulos en español?", en: "Are there Spanish subtitles?" },
+              { es: "¿Dónde están los baños?", en: "Where are the bathrooms?" },
+              { es: "Perfecto. ¿A qué hora termina?", en: "Perfect. What time does it end?" }
+            ]
+          },
+          {
+            partner: { es: "Termina a las nueve. ¡Que la disfruten!", en: "It ends at nine. Enjoy it!" },
+            choices: [
+              { es: "Gracias. ¡Hasta luego!", en: "Thanks. See you later!" },
+              { es: "Muy amable.", en: "Very kind." },
+              { es: "¡Qué bien! Adiós.", en: "Great! Goodbye." }
+            ]
+          },
+          {
+            partner: { es: "De nada. ¡Buenas noches!", en: "You are welcome. Good night!" },
+            choices: null
+          }
+        ]
+      },
+      {
+        id: "hairsalon",
+        emoji: "💇",
+        title: "At the hair salon",
+        description: "Book a cut, say how you want it, and pay.",
+        phrases: ["Quiero un corte…", "No demasiado corto", "¿Cuánto es?"],
+        turns: [
+          {
+            partner: { es: "¡Hola! ¿Tiene cita?", en: "Hi! Do you have an appointment?" },
+            choices: [
+              { es: "Sí. A las once.", en: "Yes. At eleven." },
+              { es: "No. ¿Hay hueco ahora?", en: "No. Is there an opening now?" },
+              { es: "Quiero cortarme el pelo, por favor.", en: "I want a haircut, please." }
+            ]
+          },
+          {
+            partner: { es: "Perfecto. Pase. ¿Cómo lo quiere?", en: "Perfect. Come in. How do you want it?" },
+            choices: [
+              { es: "Un poco más corto, por favor.", en: "A little shorter, please." },
+              { es: "No demasiado corto.", en: "Not too short." },
+              { es: "Igual que ahora, solo un arreglo.", en: "The same as now, just a trim." }
+            ]
+          },
+          {
+            partner: { es: "Muy bien. ¿También el flequillo?", en: "Very good. The bangs too?" },
+            choices: [
+              { es: "Sí, un poco.", en: "Yes, a little." },
+              { es: "No, solo los lados.", en: "No, just the sides." },
+              { es: "Como usted vea mejor.", en: "However you think is best." }
+            ]
+          },
+          {
+            partner: { es: "Listo. ¿Quiere que lo lave también?", en: "Done. Do you want me to wash it too?" },
+            choices: [
               { es: "Sí, por favor.", en: "Yes, please." },
-              { es: "No. ¿Cuánto cuesta?", en: "No. How much does it cost?" }
+              { es: "No, gracias. Solo el corte.", en: "No, thanks. Just the cut." },
+              { es: "Sí. ¿Cuánto tiempo más?", en: "Yes. How much longer?" }
             ]
           },
           {
-            partner: { es: "¿Qué tal le queda?", en: "How does it fit?" },
+            partner: { es: "Son veinte euros. ¿Le gusta?", en: "It is twenty euros. Do you like it?" },
             choices: [
-              { es: "Me queda bien. Me la llevo.", en: "It fits well. I will take it." },
-              { es: "Es un poco grande.", en: "It is a little big." },
-              { es: "Me gusta. ¿Cuánto es?", en: "I like it. How much is it?" }
-            ]
-          },
-          {
-            partner: { es: "Son veinte euros. ¡Gracias por su compra!", en: "It is twenty euros. Thanks for your purchase!" },
-            choices: null
-          }
-        ]
-      },
-      {
-        id: "post",
-        emoji: "📮",
-        title: "At the post office",
-        description: "Send a package, buy stamps, and ask how long it takes.",
-        phrases: ["Quiero enviar…", "¿Cuánto tarda?", "Un sello, por favor"],
-        turns: [
-          {
-            partner: { es: "Buenos días. ¿Qué necesita?", en: "Good morning. What do you need?" },
-            choices: [
-              { es: "Quiero enviar un paquete.", en: "I want to send a package." },
-              { es: "Necesito sellos, por favor.", en: "I need stamps, please." },
-              { es: "Quiero enviar una carta.", en: "I want to send a letter." }
-            ]
-          },
-          {
-            partner: { es: "Claro. ¿A dónde lo envía?", en: "Of course. Where are you sending it?" },
-            choices: [
-              { es: "A Estados Unidos.", en: "To the United States." },
-              { es: "Aquí en España. A Madrid.", en: "Here in Spain. To Madrid." },
-              { es: "A Francia, por favor.", en: "To France, please." }
-            ]
-          },
-          {
-            partner: { es: "¿Normal o urgente?", en: "Standard or express?" },
-            choices: [
-              { es: "Normal, por favor.", en: "Standard, please." },
-              { es: "Urgente, por favor.", en: "Express, please." },
-              { es: "¿Cuánto tarda el normal?", en: "How long does standard take?" }
-            ]
-          },
-          {
-            partner: { es: "El normal tarda una semana. Son ocho euros.", en: "Standard takes one week. It is eight euros." },
-            choices: [
-              { es: "Perfecto. Pago con tarjeta.", en: "Perfect. I will pay by card." },
-              { es: "Bien. También quiero un sello.", en: "Good. I also want a stamp." },
+              { es: "Sí, me encanta. Gracias.", en: "Yes, I love it. Thanks." },
+              { es: "Perfecto. ¿Puedo pagar con tarjeta?", en: "Perfect. Can I pay by card?" },
               { es: "Muy bien. Aquí tiene.", en: "Very good. Here you go." }
             ]
           },
           {
-            partner: { es: "Aquí tiene su recibo. ¿Algo más?", en: "Here is your receipt. Anything else?" },
-            choices: [
-              { es: "No, eso es todo. Gracias.", en: "No, that is all. Thanks." },
-              { es: "Sí. ¿Dónde está el buzón?", en: "Yes. Where is the mailbox?" },
-              { es: "Nada más. ¡Hasta luego!", en: "Nothing else. See you later!" }
-            ]
-          },
-          {
-            partner: { es: "Muy bien. ¡Que tenga un buen día!", en: "Very good. Have a nice day!" },
+            partner: { es: "¡Gracias! ¡Que tenga un buen día!", en: "Thank you! Have a nice day!" },
             choices: null
           }
         ]
       },
       {
-        id: "meeting",
-        emoji: "👋",
-        title: "Meeting someone new",
-        description: "Introduce yourself, say where you are from, and talk about work.",
-        phrases: ["Me llamo…", "Soy de…", "Mucho gusto"],
+        id: "park",
+        emoji: "🌳",
+        title: "At the park",
+        description: "Meet a friend, talk about plans, and find a place to sit.",
+        phrases: ["¿Quedamos en el parque?", "Hace buen día", "¿Hay un banco libre?"],
         turns: [
           {
-            partner: { es: "¡Hola! Me llamo Lucía. ¿Y tú?", en: "Hi! My name is Lucía. And you?" },
+            partner: { es: "¡Hola! ¿Llevas mucho tiempo esperando?", en: "Hi! Have you been waiting long?" },
             choices: [
-              { es: "Hola. Me llamo Matthew.", en: "Hi. My name is Matthew." },
-              { es: "Mucho gusto. Soy Matthew.", en: "Nice to meet you. I am Matthew." },
-              { es: "Encantado. Me llamo Matthew.", en: "Pleased to meet you. My name is Matthew." }
+              { es: "No. Acabo de llegar.", en: "No. I just got here." },
+              { es: "Unos minutos. ¿Cómo estás?", en: "A few minutes. How are you?" },
+              { es: "Sí, un poco. ¡Qué bueno verte!", en: "Yes, a little. So good to see you!" }
             ]
           },
           {
-            partner: { es: "Encantada. ¿De dónde eres?", en: "Pleased to meet you. Where are you from?" },
+            partner: { es: "Estoy bien. Hace un día precioso. ¿Qué quieres hacer?", en: "I am well. It is a beautiful day. What do you want to do?" },
             choices: [
-              { es: "Soy de Estados Unidos.", en: "I am from the United States." },
-              { es: "Soy de Nueva York.", en: "I am from New York." },
-              { es: "Soy americano. ¿Y tú?", en: "I am American. And you?" }
+              { es: "Caminar un rato.", en: "Walk for a while." },
+              { es: "Sentarnos y hablar.", en: "Sit and talk." },
+              { es: "¿Hay un café cerca del parque?", en: "Is there a café near the park?" }
             ]
           },
           {
-            partner: { es: "¡Qué bien! Yo soy de México. ¿A qué te dedicas?", en: "How nice! I am from Mexico. What do you do for work?" },
+            partner: { es: "Hay un banco libre allá. ¿Comemos algo?", en: "There is a free bench over there. Shall we eat something?" },
             choices: [
-              { es: "Trabajo en una oficina.", en: "I work in an office." },
-              { es: "Soy estudiante.", en: "I am a student." },
-              { es: "Trabajo con computadoras.", en: "I work with computers." }
+              { es: "Sí. Traje fruta.", en: "Yes. I brought fruit." },
+              { es: "Buena idea. Tengo hambre.", en: "Good idea. I am hungry." },
+              { es: "Más tarde. Primero caminamos.", en: "Later. First we walk." }
             ]
           },
           {
-            partner: { es: "Interesante. ¿Hablas mucho español?", en: "Interesting. Do you speak a lot of Spanish?" },
+            partner: { es: "Perfecto. ¿Vienes el sábado también?", en: "Perfect. Are you coming Saturday too?" },
             choices: [
-              { es: "Un poco. Estoy aprendiendo.", en: "A little. I am learning." },
-              { es: "No mucho. Hablo despacio.", en: "Not much. I speak slowly." },
-              { es: "Poco, pero me gusta mucho.", en: "A little, but I like it a lot." }
+              { es: "Sí. ¿A qué hora?", en: "Yes. What time?" },
+              { es: "Creo que sí. Te aviso.", en: "I think so. I will let you know." },
+              { es: "El domingo me viene mejor.", en: "Sunday works better for me." }
             ]
           },
           {
-            partner: { es: "¡Hablas muy bien! ¿Tomamos un café un día?", en: "You speak very well! Shall we get a coffee one day?" },
+            partner: { es: "A las diez. Trae una pelota si quieres.", en: "At ten. Bring a ball if you want." },
             choices: [
-              { es: "Sí, me encantaría.", en: "Yes, I would love to." },
-              { es: "Claro. ¿El sábado?", en: "Sure. On Saturday?" },
-              { es: "Buena idea. Gracias, Lucía.", en: "Good idea. Thanks, Lucía." }
+              { es: "Claro. ¡Nos vemos!", en: "Sure. See you!" },
+              { es: "Genial. Gracias por invitarme.", en: "Great. Thanks for inviting me." },
+              { es: "Perfecto. ¡Hasta el sábado!", en: "Perfect. See you Saturday!" }
             ]
           },
           {
-            partner: { es: "¡Perfecto! Mucho gusto. ¡Hasta pronto!", en: "Perfect! Nice to meet you. See you soon!" },
+            partner: { es: "¡Hasta entonces! Que te vaya bien.", en: "Until then! Take care." },
             choices: null
           }
         ]
