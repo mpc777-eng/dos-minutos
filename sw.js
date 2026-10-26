@@ -2,7 +2,7 @@
  * Network-first for the app's own files: when online you always get the latest
  * index.html (weekly scenario updates show up on next open, no reinstall), and the
  * cached copy is used offline. Bump CACHE_VERSION to force-refresh everything. */
-const CACHE_VERSION = "dos-minutos-v1";
+const CACHE_VERSION = "dos-minutos-v2";
 const APP_SHELL = [
   "./",
   "./index.html",
