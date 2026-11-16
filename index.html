@@ -642,320 +642,80 @@
     /* ========== SCENARIOS ========== */
     const SCENARIOS = [
       {
-        "id": "pharmacy",
-        "emoji": "💊",
-        "title": "At the pharmacy",
-        "description": "Ask for medicine for a cold and understand how to take it.",
+        "id": "postoffice",
+        "emoji": "📮",
+        "title": "At the post office",
+        "description": "Send a package and buy stamps.",
         "phrases": [
-          "Necesito algo para…",
-          "¿Cuántas veces al día?",
-          "Me duele…"
+          "Quiero enviar…",
+          "¿Cuánto cuesta?",
+          "Un sello, por favor"
         ],
         "turns": [
           {
             "partner": {
-              "es": "Buenas tardes. ¿En qué puedo ayudarle?",
-              "en": "Good afternoon. How can I help you?"
+              "es": "Buenos días. ¿Qué desea?",
+              "en": "Good morning. What would you like?"
             },
             "choices": [
               {
-                "es": "Necesito algo para la tos.",
-                "en": "I need something for a cough."
+                "es": "Quiero enviar este paquete.",
+                "en": "I want to send this package."
               },
               {
-                "es": "Me duele la cabeza.",
-                "en": "My head hurts."
+                "es": "Necesito sellos.",
+                "en": "I need stamps."
               },
               {
-                "es": "Tengo un resfriado.",
-                "en": "I have a cold."
+                "es": "Quiero enviar una carta.",
+                "en": "I want to send a letter."
               }
             ]
           },
           {
             "partner": {
-              "es": "¿Desde cuándo se siente mal?",
-              "en": "Since when have you felt bad?"
+              "es": "¿A qué país va?",
+              "en": "Which country is it going to?"
             },
             "choices": [
               {
-                "es": "Desde ayer.",
-                "en": "Since yesterday."
+                "es": "A México.",
+                "en": "To Mexico."
               },
               {
-                "es": "Desde hace dos días.",
-                "en": "For two days."
+                "es": "A España.",
+                "en": "To Spain."
               },
               {
-                "es": "Desde esta mañana.",
-                "en": "Since this morning."
+                "es": "Es en la ciudad.",
+                "en": "It is in the city."
               }
             ]
           },
           {
             "partner": {
-              "es": "¿Tiene fiebre?",
-              "en": "Do you have a fever?"
+              "es": "Muy bien. ¿Qué hay dentro?",
+              "en": "Okay. What is inside?"
             },
             "choices": [
               {
-                "es": "No, no tengo fiebre.",
-                "en": "No, I do not have a fever."
+                "es": "Son libros.",
+                "en": "They are books."
               },
               {
-                "es": "Un poco.",
-                "en": "A little."
+                "es": "Es un regalo.",
+                "en": "It is a gift."
               },
               {
-                "es": "No sé.",
-                "en": "I do not know."
+                "es": "Es ropa.",
+                "en": "It is clothes."
               }
             ]
           },
           {
             "partner": {
-              "es": "Le recomiendo este jarabe. Es muy bueno.",
-              "en": "I recommend this syrup. It is very good."
-            },
-            "choices": [
-              {
-                "es": "Está bien, gracias.",
-                "en": "Okay, thank you."
-              },
-              {
-                "es": "¿Cuánto cuesta?",
-                "en": "How much does it cost?"
-              },
-              {
-                "es": "¿Es para niños también?",
-                "en": "Is it for children too?"
-              }
-            ]
-          },
-          {
-            "partner": {
-              "es": "Tome una cucharada tres veces al día.",
-              "en": "Take one spoonful three times a day."
-            },
-            "choices": [
-              {
-                "es": "¿Tres veces al día?",
-                "en": "Three times a day?"
-              },
-              {
-                "es": "Muy bien, lo entiendo.",
-                "en": "Very good, I understand."
-              },
-              {
-                "es": "¿Antes o después de comer?",
-                "en": "Before or after eating?"
-              }
-            ]
-          },
-          {
-            "partner": {
-              "es": "Después de comer. ¡Que se mejore pronto!",
-              "en": "After eating. Get well soon!"
-            },
-            "choices": null
-          }
-        ]
-      },
-      {
-        "id": "haircut",
-        "emoji": "💈",
-        "title": "At the barbershop",
-        "description": "Ask for a haircut and say how short you want it.",
-        "phrases": [
-          "Quiero cortarme el pelo",
-          "Más corto, por favor",
-          "Está bien así"
-        ],
-        "turns": [
-          {
-            "partner": {
-              "es": "¡Hola! Siéntese, por favor. ¿Qué desea?",
-              "en": "Hello! Please sit down. What would you like?"
-            },
-            "choices": [
-              {
-                "es": "Quiero un corte de pelo.",
-                "en": "I want a haircut."
-              },
-              {
-                "es": "Solo un poco más corto.",
-                "en": "Just a little shorter."
-              },
-              {
-                "es": "Quiero cortarme el pelo.",
-                "en": "I want to get my hair cut."
-              }
-            ]
-          },
-          {
-            "partner": {
-              "es": "¿Cómo lo quiere? ¿Corto o largo?",
-              "en": "How do you want it? Short or long?"
-            },
-            "choices": [
-              {
-                "es": "Corto, por favor.",
-                "en": "Short, please."
-              },
-              {
-                "es": "Un poco largo arriba.",
-                "en": "A bit long on top."
-              },
-              {
-                "es": "Como siempre.",
-                "en": "Like always."
-              }
-            ]
-          },
-          {
-            "partner": {
-              "es": "¿Y los lados?",
-              "en": "And the sides?"
-            },
-            "choices": [
-              {
-                "es": "Más cortos.",
-                "en": "Shorter."
-              },
-              {
-                "es": "Muy cortos, por favor.",
-                "en": "Very short, please."
-              },
-              {
-                "es": "No muy cortos.",
-                "en": "Not very short."
-              }
-            ]
-          },
-          {
-            "partner": {
-              "es": "¿Quiere también la barba?",
-              "en": "Do you want the beard too?"
-            },
-            "choices": [
-              {
-                "es": "Sí, un poco.",
-                "en": "Yes, a little."
-              },
-              {
-                "es": "No, gracias.",
-                "en": "No, thank you."
-              },
-              {
-                "es": "Solo recórtela.",
-                "en": "Just trim it."
-              }
-            ]
-          },
-          {
-            "partner": {
-              "es": "Listo. ¿Cómo se ve?",
-              "en": "Done. How does it look?"
-            },
-            "choices": [
-              {
-                "es": "Me gusta mucho.",
-                "en": "I like it a lot."
-              },
-              {
-                "es": "Está bien así.",
-                "en": "It is good like this."
-              },
-              {
-                "es": "Un poco más corto, por favor.",
-                "en": "A little shorter, please."
-              }
-            ]
-          },
-          {
-            "partner": {
-              "es": "¡Perfecto! Son quince dólares.",
-              "en": "Perfect! It is fifteen dollars."
-            },
-            "choices": null
-          }
-        ]
-      },
-      {
-        "id": "bus",
-        "emoji": "🚌",
-        "title": "Taking the bus",
-        "description": "Ask which bus to take and how much the ticket costs.",
-        "phrases": [
-          "¿Qué autobús va a…?",
-          "¿Cuánto cuesta el boleto?",
-          "¿Dónde me bajo?"
-        ],
-        "turns": [
-          {
-            "partner": {
-              "es": "¡Hola! ¿A dónde va?",
-              "en": "Hi! Where are you going?"
-            },
-            "choices": [
-              {
-                "es": "Voy al centro.",
-                "en": "I am going downtown."
-              },
-              {
-                "es": "Voy al parque.",
-                "en": "I am going to the park."
-              },
-              {
-                "es": "Voy al aeropuerto.",
-                "en": "I am going to the airport."
-              }
-            ]
-          },
-          {
-            "partner": {
-              "es": "Tome el autobús número diez.",
-              "en": "Take bus number ten."
-            },
-            "choices": [
-              {
-                "es": "¿El número diez?",
-                "en": "Number ten?"
-              },
-              {
-                "es": "¿Dónde está la parada?",
-                "en": "Where is the stop?"
-              },
-              {
-                "es": "Gracias. ¿Cuándo llega?",
-                "en": "Thanks. When does it arrive?"
-              }
-            ]
-          },
-          {
-            "partner": {
-              "es": "Llega en cinco minutos.",
-              "en": "It arrives in five minutes."
-            },
-            "choices": [
-              {
-                "es": "Muy bien, espero.",
-                "en": "Very good, I will wait."
-              },
-              {
-                "es": "¿Cuánto cuesta el boleto?",
-                "en": "How much is the ticket?"
-              },
-              {
-                "es": "Gracias, señor.",
-                "en": "Thank you, sir."
-              }
-            ]
-          },
-          {
-            "partner": {
-              "es": "El boleto cuesta dos dólares.",
-              "en": "The ticket costs two dollars."
+              "es": "Son doce dólares.",
+              "en": "It is twelve dollars."
             },
             "choices": [
               {
@@ -967,375 +727,235 @@
                 "en": "Can I pay by card?"
               },
               {
-                "es": "Dos boletos, por favor.",
-                "en": "Two tickets, please."
+                "es": "Es un poco caro.",
+                "en": "It is a little expensive."
               }
             ]
           },
           {
             "partner": {
-              "es": "Es la próxima parada. Bájese aquí.",
-              "en": "It is the next stop. Get off here."
+              "es": "Llega en una semana. ¿Algo más?",
+              "en": "It arrives in a week. Anything else?"
             },
             "choices": [
-              {
-                "es": "¿Aquí me bajo?",
-                "en": "Do I get off here?"
-              },
-              {
-                "es": "Gracias por su ayuda.",
-                "en": "Thanks for your help."
-              },
-              {
-                "es": "¿Está lejos de aquí?",
-                "en": "Is it far from here?"
-              }
-            ]
-          },
-          {
-            "partner": {
-              "es": "Está muy cerca. ¡Buen viaje!",
-              "en": "It is very close. Have a good trip!"
-            },
-            "choices": null
-          }
-        ]
-      },
-      {
-        "id": "bakery",
-        "emoji": "🥐",
-        "title": "At the bakery",
-        "description": "Order bread and sweets for breakfast.",
-        "phrases": [
-          "Quiero un pan…",
-          "¿Cuánto es?",
-          "Para llevar"
-        ],
-        "turns": [
-          {
-            "partner": {
-              "es": "¡Buenos días! ¿Qué le doy?",
-              "en": "Good morning! What can I give you?"
-            },
-            "choices": [
-              {
-                "es": "Quiero pan, por favor.",
-                "en": "I want bread, please."
-              },
-              {
-                "es": "Buenos días. Quiero algo dulce.",
-                "en": "Good morning. I want something sweet."
-              },
-              {
-                "es": "¿Qué tiene hoy?",
-                "en": "What do you have today?"
-              }
-            ]
-          },
-          {
-            "partner": {
-              "es": "Tenemos pan fresco y galletas.",
-              "en": "We have fresh bread and cookies."
-            },
-            "choices": [
-              {
-                "es": "Me gustan las galletas.",
-                "en": "I like cookies."
-              },
-              {
-                "es": "Quiero el pan, por favor.",
-                "en": "I want the bread, please."
-              },
-              {
-                "es": "¿Tiene pasteles?",
-                "en": "Do you have pastries?"
-              }
-            ]
-          },
-          {
-            "partner": {
-              "es": "¿Cuántos quiere?",
-              "en": "How many do you want?"
-            },
-            "choices": [
-              {
-                "es": "Seis galletas.",
-                "en": "Six cookies."
-              },
-              {
-                "es": "Dos panes, por favor.",
-                "en": "Two loaves, please."
-              },
-              {
-                "es": "Solo uno.",
-                "en": "Just one."
-              }
-            ]
-          },
-          {
-            "partner": {
-              "es": "¿Algo más? ¿Café o leche?",
-              "en": "Anything else? Coffee or milk?"
-            },
-            "choices": [
-              {
-                "es": "Un café, por favor.",
-                "en": "A coffee, please."
-              },
-              {
-                "es": "Leche para mi hija.",
-                "en": "Milk for my daughter."
-              },
               {
                 "es": "No, nada más.",
                 "en": "No, nothing else."
+              },
+              {
+                "es": "Sí, dos sellos.",
+                "en": "Yes, two stamps."
+              },
+              {
+                "es": "¿Hay seguimiento?",
+                "en": "Is there tracking?"
               }
             ]
           },
           {
             "partner": {
-              "es": "¿Es para comer aquí o para llevar?",
-              "en": "Is it to eat here or to go?"
-            },
-            "choices": [
-              {
-                "es": "Para llevar.",
-                "en": "To go."
-              },
-              {
-                "es": "Para comer aquí.",
-                "en": "To eat here."
-              },
-              {
-                "es": "Para llevar, gracias.",
-                "en": "To go, thanks."
-              }
-            ]
-          },
-          {
-            "partner": {
-              "es": "Son ocho dólares. ¡Que le aproveche!",
-              "en": "It is eight dollars. Enjoy your meal!"
+              "es": "Perfecto. ¡Que tenga un buen día!",
+              "en": "Perfect. Have a nice day!"
             },
             "choices": null
           }
         ]
       },
       {
-        "id": "park",
-        "emoji": "🛝",
-        "title": "At the playground",
-        "description": "Chat with another parent while the kids play.",
+        "id": "icecream",
+        "emoji": "🍦",
+        "title": "At the ice cream shop",
+        "description": "Choose a flavor and a size.",
         "phrases": [
-          "¿Cuántos años tiene?",
-          "Le gusta jugar",
-          "Vivo cerca de aquí"
+          "Quiero un helado de…",
+          "¿Qué sabores hay?",
+          "Pequeño o grande"
         ],
         "turns": [
           {
             "partner": {
-              "es": "¡Hola! ¿Es su hija?",
-              "en": "Hi! Is she your daughter?"
+              "es": "¡Hola! ¿Qué quieres?",
+              "en": "Hi! What do you want?"
             },
             "choices": [
               {
-                "es": "Sí, es mi hija.",
-                "en": "Yes, she is my daughter."
+                "es": "Quiero un helado.",
+                "en": "I want an ice cream."
               },
               {
-                "es": "Sí, y él es mi hijo.",
-                "en": "Yes, and he is my son."
+                "es": "¿Qué sabores hay?",
+                "en": "What flavors are there?"
               },
               {
-                "es": "Sí, se llama Ana.",
-                "en": "Yes, her name is Ana."
+                "es": "Quiero un helado de chocolate.",
+                "en": "I want a chocolate ice cream."
               }
             ]
           },
           {
             "partner": {
-              "es": "Qué linda. ¿Cuántos años tiene?",
-              "en": "How cute. How old is she?"
+              "es": "Hay chocolate, fresa y vainilla.",
+              "en": "We have chocolate, strawberry and vanilla."
             },
             "choices": [
               {
-                "es": "Tiene cuatro años.",
-                "en": "She is four."
+                "es": "Fresa, por favor.",
+                "en": "Strawberry, please."
               },
               {
-                "es": "Cuatro, y mi hijo tiene siete.",
-                "en": "Four, and my son is seven."
+                "es": "Vainilla, por favor.",
+                "en": "Vanilla, please."
               },
               {
-                "es": "¿Y su hijo?",
-                "en": "And your son?"
+                "es": "Chocolate, por favor.",
+                "en": "Chocolate, please."
               }
             ]
           },
           {
             "partner": {
-              "es": "Mi hijo tiene cinco. Le gusta jugar mucho.",
-              "en": "My son is five. He loves to play."
+              "es": "¿Pequeño, mediano o grande?",
+              "en": "Small, medium or large?"
             },
             "choices": [
               {
-                "es": "A ella también.",
-                "en": "She does too."
+                "es": "Mediano.",
+                "en": "Medium."
               },
               {
-                "es": "Les gusta el tobogán.",
-                "en": "They like the slide."
+                "es": "Pequeño.",
+                "en": "Small."
               },
               {
-                "es": "Es muy simpático.",
-                "en": "He is very nice."
+                "es": "Grande.",
+                "en": "Large."
               }
             ]
           },
           {
             "partner": {
-              "es": "¿Viven cerca de aquí?",
-              "en": "Do you live near here?"
+              "es": "¿En vaso o en cono?",
+              "en": "In a cup or in a cone?"
             },
             "choices": [
               {
-                "es": "Sí, vivo cerca.",
-                "en": "Yes, I live nearby."
+                "es": "En cono, por favor.",
+                "en": "In a cone, please."
               },
               {
-                "es": "Vivimos a diez minutos.",
-                "en": "We live ten minutes away."
+                "es": "En vaso.",
+                "en": "In a cup."
               },
               {
-                "es": "No, vivo lejos.",
-                "en": "No, I live far."
+                "es": "No sé. ¿Cuál es mejor?",
+                "en": "I don't know. Which is better?"
               }
             ]
           },
           {
             "partner": {
-              "es": "Venimos al parque todos los días.",
-              "en": "We come to the park every day."
+              "es": "Son cuatro dólares.",
+              "en": "It is four dollars."
             },
             "choices": [
               {
-                "es": "Nosotros venimos los sábados.",
-                "en": "We come on Saturdays."
+                "es": "Aquí tiene.",
+                "en": "Here you go."
               },
               {
-                "es": "Qué bueno.",
-                "en": "How nice."
+                "es": "¿Aceptan tarjeta?",
+                "en": "Do you accept cards?"
               },
               {
-                "es": "Hoy hace buen tiempo.",
-                "en": "The weather is nice today."
+                "es": "Gracias.",
+                "en": "Thank you."
               }
             ]
           },
           {
             "partner": {
-              "es": "¡Sí! Bueno, ¡hasta luego!",
-              "en": "Yes! Well, see you later!"
+              "es": "¡Gracias! Que lo disfrutes.",
+              "en": "Thanks! Enjoy it."
             },
             "choices": null
           }
         ]
       },
       {
-        "id": "grocery",
-        "emoji": "🛒",
-        "title": "At the grocery store",
-        "description": "Find fruit and ask where things are.",
+        "id": "petstore",
+        "emoji": "🐶",
+        "title": "At the pet store",
+        "description": "Buy food for your dog.",
         "phrases": [
-          "¿Dónde está…?",
-          "Una bolsa de…",
-          "Necesito…"
+          "Tengo un perro",
+          "Comida para…",
+          "¿Cuál es mejor?"
         ],
         "turns": [
           {
             "partner": {
-              "es": "¡Hola! ¿Necesita ayuda?",
-              "en": "Hello! Do you need help?"
+              "es": "Hola. ¿Puedo ayudarle?",
+              "en": "Hello. Can I help you?"
             },
             "choices": [
               {
-                "es": "Sí, ¿dónde está la fruta?",
-                "en": "Yes, where is the fruit?"
+                "es": "Necesito comida para perro.",
+                "en": "I need dog food."
               },
               {
-                "es": "Busco la leche.",
-                "en": "I am looking for milk."
+                "es": "Tengo un perro pequeño.",
+                "en": "I have a small dog."
               },
               {
-                "es": "Sí, por favor.",
-                "en": "Yes, please."
+                "es": "Busco un juguete.",
+                "en": "I am looking for a toy."
               }
             ]
           },
           {
             "partner": {
-              "es": "La fruta está al fondo, a la derecha.",
-              "en": "The fruit is at the back, on the right."
+              "es": "¿Cuántos años tiene su perro?",
+              "en": "How old is your dog?"
             },
             "choices": [
               {
-                "es": "¿A la derecha?",
-                "en": "On the right?"
+                "es": "Tiene dos años.",
+                "en": "He is two years old."
               },
               {
-                "es": "Muchas gracias.",
-                "en": "Thank you very much."
+                "es": "Es un cachorro.",
+                "en": "He is a puppy."
               },
               {
-                "es": "¿Y las verduras?",
-                "en": "And the vegetables?"
+                "es": "Es muy viejo.",
+                "en": "He is very old."
               }
             ]
           },
           {
             "partner": {
-              "es": "Las verduras están al lado de la fruta.",
-              "en": "The vegetables are next to the fruit."
+              "es": "Esta comida es muy buena.",
+              "en": "This food is very good."
             },
             "choices": [
               {
-                "es": "Perfecto, gracias.",
-                "en": "Perfect, thanks."
+                "es": "¿Cuánto cuesta?",
+                "en": "How much is it?"
               },
               {
-                "es": "¿Tienen manzanas?",
-                "en": "Do you have apples?"
+                "es": "¿Hay una más barata?",
+                "en": "Is there a cheaper one?"
               },
               {
-                "es": "¿Hay plátanos?",
-                "en": "Are there bananas?"
+                "es": "Me gusta, gracias.",
+                "en": "I like it, thanks."
               }
             ]
           },
           {
             "partner": {
-              "es": "Sí, hay manzanas rojas y verdes.",
-              "en": "Yes, there are red and green apples."
-            },
-            "choices": [
-              {
-                "es": "Quiero las rojas.",
-                "en": "I want the red ones."
-              },
-              {
-                "es": "Una bolsa de manzanas.",
-                "en": "A bag of apples."
-              },
-              {
-                "es": "¿Cuánto cuestan?",
-                "en": "How much are they?"
-              }
-            ]
-          },
-          {
-            "partner": {
-              "es": "Cuestan tres dólares el kilo.",
-              "en": "They cost three dollars a kilo."
+              "es": "Cuesta veinte dólares.",
+              "en": "It costs twenty dollars."
             },
             "choices": [
               {
@@ -1343,19 +963,399 @@
                 "en": "That is fine."
               },
               {
-                "es": "Dos kilos, por favor.",
-                "en": "Two kilos, please."
+                "es": "Es mucho.",
+                "en": "That is a lot."
               },
               {
-                "es": "Qué barato.",
-                "en": "How cheap."
+                "es": "¿Hay una bolsa grande?",
+                "en": "Is there a big bag?"
               }
             ]
           },
           {
             "partner": {
-              "es": "¡Perfecto! La caja está allí. ¡Buen día!",
-              "en": "Perfect! The register is there. Have a nice day!"
+              "es": "¿Quiere también un juguete?",
+              "en": "Do you want a toy too?"
+            },
+            "choices": [
+              {
+                "es": "Sí, una pelota.",
+                "en": "Yes, a ball."
+              },
+              {
+                "es": "No, gracias.",
+                "en": "No, thanks."
+              },
+              {
+                "es": "¿Cuánto cuesta la pelota?",
+                "en": "How much is the ball?"
+              }
+            ]
+          },
+          {
+            "partner": {
+              "es": "¡Perfecto! Su perro va a estar feliz.",
+              "en": "Perfect! Your dog will be happy."
+            },
+            "choices": null
+          }
+        ]
+      },
+      {
+        "id": "dentist",
+        "emoji": "🦷",
+        "title": "At the dentist",
+        "description": "Say your tooth hurts and book a visit.",
+        "phrases": [
+          "Me duele un diente",
+          "Tengo una cita",
+          "¿Cuándo?"
+        ],
+        "turns": [
+          {
+            "partner": {
+              "es": "Buenos días. ¿Tiene una cita?",
+              "en": "Good morning. Do you have an appointment?"
+            },
+            "choices": [
+              {
+                "es": "Sí, a las diez.",
+                "en": "Yes, at ten."
+              },
+              {
+                "es": "No, no tengo cita.",
+                "en": "No, I do not have an appointment."
+              },
+              {
+                "es": "Me duele un diente.",
+                "en": "My tooth hurts."
+              }
+            ]
+          },
+          {
+            "partner": {
+              "es": "¿Cómo se llama usted?",
+              "en": "What is your name?"
+            },
+            "choices": [
+              {
+                "es": "Me llamo Matthew.",
+                "en": "My name is Matthew."
+              },
+              {
+                "es": "Mi nombre es Matthew.",
+                "en": "My name is Matthew."
+              },
+              {
+                "es": "Soy Matthew Carli.",
+                "en": "I am Matthew Carli."
+              }
+            ]
+          },
+          {
+            "partner": {
+              "es": "¿Qué diente le duele?",
+              "en": "Which tooth hurts?"
+            },
+            "choices": [
+              {
+                "es": "Este, aquí.",
+                "en": "This one, here."
+              },
+              {
+                "es": "Un diente de atrás.",
+                "en": "A back tooth."
+              },
+              {
+                "es": "No sé.",
+                "en": "I don't know."
+              }
+            ]
+          },
+          {
+            "partner": {
+              "es": "¿Desde cuándo le duele?",
+              "en": "Since when has it hurt?"
+            },
+            "choices": [
+              {
+                "es": "Desde ayer.",
+                "en": "Since yesterday."
+              },
+              {
+                "es": "Desde hace una semana.",
+                "en": "For a week."
+              },
+              {
+                "es": "Desde esta mañana.",
+                "en": "Since this morning."
+              }
+            ]
+          },
+          {
+            "partner": {
+              "es": "El doctor puede verle mañana.",
+              "en": "The doctor can see you tomorrow."
+            },
+            "choices": [
+              {
+                "es": "Sí, mañana está bien.",
+                "en": "Yes, tomorrow is fine."
+              },
+              {
+                "es": "¿A qué hora?",
+                "en": "At what time?"
+              },
+              {
+                "es": "¿Hoy no es posible?",
+                "en": "Is today not possible?"
+              }
+            ]
+          },
+          {
+            "partner": {
+              "es": "A las nueve de la mañana. ¡Hasta mañana!",
+              "en": "At nine in the morning. See you tomorrow!"
+            },
+            "choices": null
+          }
+        ]
+      },
+      {
+        "id": "gasstation",
+        "emoji": "⛽",
+        "title": "At the gas station",
+        "description": "Fill up the car and pay.",
+        "phrases": [
+          "Lleno, por favor",
+          "¿Dónde está…?",
+          "Quiero pagar"
+        ],
+        "turns": [
+          {
+            "partner": {
+              "es": "Buenas tardes. ¿Qué necesita?",
+              "en": "Good afternoon. What do you need?"
+            },
+            "choices": [
+              {
+                "es": "Quiero gasolina.",
+                "en": "I want gas."
+              },
+              {
+                "es": "Lleno, por favor.",
+                "en": "Fill it up, please."
+              },
+              {
+                "es": "Veinte dólares de gasolina.",
+                "en": "Twenty dollars of gas."
+              }
+            ]
+          },
+          {
+            "partner": {
+              "es": "¿Cuál bomba usa?",
+              "en": "Which pump are you using?"
+            },
+            "choices": [
+              {
+                "es": "La número tres.",
+                "en": "Number three."
+              },
+              {
+                "es": "La número cinco.",
+                "en": "Number five."
+              },
+              {
+                "es": "No sé.",
+                "en": "I don't know."
+              }
+            ]
+          },
+          {
+            "partner": {
+              "es": "¿Quiere pagar con tarjeta o en efectivo?",
+              "en": "Do you want to pay by card or cash?"
+            },
+            "choices": [
+              {
+                "es": "Con tarjeta.",
+                "en": "By card."
+              },
+              {
+                "es": "En efectivo.",
+                "en": "Cash."
+              },
+              {
+                "es": "¿Aceptan tarjeta?",
+                "en": "Do you accept cards?"
+              }
+            ]
+          },
+          {
+            "partner": {
+              "es": "¿Necesita algo más? ¿Agua o café?",
+              "en": "Do you need anything else? Water or coffee?"
+            },
+            "choices": [
+              {
+                "es": "Una botella de agua.",
+                "en": "A bottle of water."
+              },
+              {
+                "es": "Un café, por favor.",
+                "en": "A coffee, please."
+              },
+              {
+                "es": "No, gracias.",
+                "en": "No, thanks."
+              }
+            ]
+          },
+          {
+            "partner": {
+              "es": "¿Algo más?",
+              "en": "Anything else?"
+            },
+            "choices": [
+              {
+                "es": "¿Dónde está el baño?",
+                "en": "Where is the bathroom?"
+              },
+              {
+                "es": "No, nada más.",
+                "en": "No, nothing else."
+              },
+              {
+                "es": "¿Cuánto es todo?",
+                "en": "How much is everything?"
+              }
+            ]
+          },
+          {
+            "partner": {
+              "es": "El baño está a la derecha. ¡Buen viaje!",
+              "en": "The bathroom is on the right. Have a good trip!"
+            },
+            "choices": null
+          }
+        ]
+      },
+      {
+        "id": "laundry",
+        "emoji": "🧺",
+        "title": "At the laundromat",
+        "description": "Wash and dry your clothes.",
+        "phrases": [
+          "Quiero lavar mi ropa",
+          "¿Cuánto cuesta?",
+          "Una lavadora"
+        ],
+        "turns": [
+          {
+            "partner": {
+              "es": "Hola. ¿Necesita ayuda?",
+              "en": "Hello. Do you need help?"
+            },
+            "choices": [
+              {
+                "es": "Sí, quiero lavar mi ropa.",
+                "en": "Yes, I want to wash my clothes."
+              },
+              {
+                "es": "¿Cómo funciona?",
+                "en": "How does it work?"
+              },
+              {
+                "es": "Necesito una lavadora.",
+                "en": "I need a washing machine."
+              }
+            ]
+          },
+          {
+            "partner": {
+              "es": "Use la máquina número cuatro.",
+              "en": "Use machine number four."
+            },
+            "choices": [
+              {
+                "es": "¿Número cuatro?",
+                "en": "Number four?"
+              },
+              {
+                "es": "Muy bien, gracias.",
+                "en": "Very good, thanks."
+              },
+              {
+                "es": "¿Cuánto cuesta?",
+                "en": "How much does it cost?"
+              }
+            ]
+          },
+          {
+            "partner": {
+              "es": "Cuesta tres dólares.",
+              "en": "It costs three dollars."
+            },
+            "choices": [
+              {
+                "es": "¿Aceptan monedas?",
+                "en": "Do you accept coins?"
+              },
+              {
+                "es": "¿Hay una máquina de monedas?",
+                "en": "Is there a coin machine?"
+              },
+              {
+                "es": "Está bien.",
+                "en": "That is fine."
+              }
+            ]
+          },
+          {
+            "partner": {
+              "es": "La máquina de monedas está al fondo.",
+              "en": "The coin machine is at the back."
+            },
+            "choices": [
+              {
+                "es": "Gracias.",
+                "en": "Thank you."
+              },
+              {
+                "es": "¿A la izquierda?",
+                "en": "On the left?"
+              },
+              {
+                "es": "¿Vende jabón?",
+                "en": "Do you sell soap?"
+              }
+            ]
+          },
+          {
+            "partner": {
+              "es": "Sí, el jabón cuesta un dólar. Lavar tarda 30 minutos.",
+              "en": "Yes, soap costs a dollar. Washing takes 30 minutes."
+            },
+            "choices": [
+              {
+                "es": "Está bien.",
+                "en": "Okay."
+              },
+              {
+                "es": "¿Y la secadora?",
+                "en": "And the dryer?"
+              },
+              {
+                "es": "Muy bien, espero.",
+                "en": "Very good, I will wait."
+              }
+            ]
+          },
+          {
+            "partner": {
+              "es": "La secadora está allí. ¡Hasta luego!",
+              "en": "The dryer is over there. See you later!"
             },
             "choices": null
           }
